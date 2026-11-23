@@ -123,6 +123,11 @@ function openEvidence(rows, title = "证据库") {
       item.append(node("small", resolveSource(r) + " · " + r.date + " · " + (r.version || "版本待确认")),
         node("h3", nameFor(r.product) + " · " + capabilityFor(r.capability)), node("blockquote", r.excerpt),
         node("small", "来源 " + r.source + "　·　" + r.id));
+      if (/^https:\/\//.test(r.source)) {
+        const link = node("a", "打开原始网页 ↗");
+        link.href = r.source; link.target = "_blank"; link.rel = "noopener";
+        item.append(link);
+      }
       list.append(item);
     }
     if (!matches.length) list.append(node("p", "当前范围内没有匹配的证据。"));

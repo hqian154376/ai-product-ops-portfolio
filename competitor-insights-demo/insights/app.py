@@ -14,7 +14,7 @@ from pydantic import BaseModel, Field
 from starlette.concurrency import run_in_threadpool
 from starlette.middleware.trustedhost import TrustedHostMiddleware
 
-from . import analysis, catalog, materials, radar_api, research, strategy_agent
+from . import analysis, catalog, collection, materials, radar_api, research, strategy_agent
 
 
 class RequestReport(BaseModel):
@@ -49,6 +49,7 @@ def create_app(db_path=None, config=None, transport=None):
         catalog.initialize(db_path)
         materials.initialize(db_path)
         radar_api.initialize(db_path)
+        collection.initialize(db_path)
         with httpx.Client(transport=transport, follow_redirects=False) as client:
             app.state.model_client = client
             yield
@@ -56,6 +57,7 @@ def create_app(db_path=None, config=None, transport=None):
     app = FastAPI(title="竞品分析", lifespan=lifespan)
     app.include_router(materials.make_router(db_path))
     app.include_router(radar_api.make_router(db_path))
+    app.include_router(collection.make_router(db_path))
     app.add_middleware(TrustedHostMiddleware, allowed_hosts=["localhost", "127.0.0.1"])
 
     @app.middleware("http")
@@ -99,6 +101,10 @@ def create_app(db_path=None, config=None, transport=None):
             "mode": mode,
             "model": config.get("LLM_MODEL") if mode == "model" else None,
         }
+
+    @app.post('/api/collection/agent-run')
+    def run_collection_agent(data: collection.CollectionTask):
+        return collection.agent_collect(db_path,data.question,config,app.state.model_client)
 
     @app.get("/api/products")
     def list_products():

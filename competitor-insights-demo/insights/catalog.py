@@ -134,6 +134,7 @@ def selected(path, left, right):
     if left == right:
         raise InputError("请选择两款不同的设计工具。")
     with closing(connect(path)) as db:
+        names = {r['product']:r['name'] for r in db.execute('SELECT * FROM tools WHERE product IN (?,?)',(left,right))}
         rows = [
             dict(r)
             for r in db.execute(
@@ -142,7 +143,6 @@ def selected(path, left, right):
                 (left, right),
             )
         ]
-    names = {r["product"]: r["name"] for r in rows}
     if len(names) != 2:
         raise InputError("未找到选定工具。")
     for r in rows:

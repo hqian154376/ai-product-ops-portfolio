@@ -58,6 +58,7 @@ INTENT_NAMES = {
     "change": "版本复验",
 }
 SOURCE_NAMES = {
+    "documentation": "官方文档（未实测）",
     "walkthrough": "任务走查",
     "release": "版本说明",
     "feedback": "用户反馈",

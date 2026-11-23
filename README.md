@@ -1,8 +1,14 @@
 # AI 产品运营与项目管理作品集
 
-两个独立的本地 Web 项目，分别展示竞品研究中的产品取舍，以及研发交付中的版本核对。均为离职后根据过往项目场景重新实现，演示数据全部虚构。
+两个独立的本地 Web 项目，分别展示竞品研究中的产品取舍，以及研发交付中的版本核对。均为离职后根据过往项目场景重新实现，业务样例使用虚构数据；网页采集另使用真实公开官方文档。
 
 ## 竞品研究：下一轮迭代应该先改什么？
+
+**从真实网页开始。** 少量人工设定来源 → 采集 Agent 调用抓取工具 → Trafilatura 提取正文、去重与保存快照 → 人工确认摘录或补充失败来源 → 统一 CSV → 研究 Agent 查证并输出带引用的建议。[采集流程、架构与实习讲法](competitor-insights-demo/COLLECTION.md)。现已跑通 Krita、GIMP 真实文档采集与 DeepSeek 分析，原有虚构 AI 产品案例继续展示版本复验与反馈跟进。
+
+[![采集 Agent 到研究 Agent 的真实操作录屏](media/collection-to-research.gif)](https://raw.githubusercontent.com/hqian154376/ai-product-ops-portfolio/main/media/collection-to-research.mp4)
+
+[播放采集与研究实录（MP4）](https://raw.githubusercontent.com/hqian154376/ai-product-ops-portfolio/main/media/collection-to-research.mp4)
 
 [![新版真实运行：反馈雷达、DeepSeek 取证、报告引用与项目台账](media/research-live-preview.gif)](https://raw.githubusercontent.com/hqian154376/ai-product-ops-portfolio/main/media/research-live-demo.mp4)
 

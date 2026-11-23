@@ -52,7 +52,7 @@ def parse(payload):
             for key in ("product", "version", "origin"):
                 if not catalog.IDENTIFIER.fullmatch(row[key]):
                     raise catalog.InputError(f"第 {line} 行 {key} 编号无效。")
-            if row["capability"] not in research.CAPABILITIES or row["source_type"] not in {"release","feedback"}:
+            if row["capability"] not in research.CAPABILITIES or row["source_type"] not in {"release","feedback","documentation"}:
                 raise catalog.InputError(f"第 {line} 行能力或来源类型无效。")
             if row["position"] not in {"support","friction","unknown"}:
                 raise catalog.InputError(f"第 {line} 行证据倾向无效。")
