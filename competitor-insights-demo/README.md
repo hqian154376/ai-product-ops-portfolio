@@ -35,7 +35,7 @@ uv run python run.py
 
 - **任务走查**使用 [import-example.csv](samples/import-example.csv)。每行记录一个产品在指定日期和版本完成某一步骤的表现。一个新产品先用这个模板登记。相同产品、日期和步骤可以订正，先前保存的报告保留原文。
 - **公告或反馈**使用 [source-import-example.csv](samples/source-import-example.csv)。每条摘录登记证据编号、产品、版本、日期、能力、来源类型、材料编号、出处、倾向、原文。样例里一份公告称支持透明背景导出，一位用户却遇到白底。同一份材料的多条摘录共用 `origin`。同一 `id` 与内容重复时自动跳过，同一 `id` 对应不同内容时提示另设编号。
-- **复核矛盾说法**可从走查入口导入 [verification-example.csv](samples/verification-example.csv)。后四项能力均可记录 `pass`、`fail` 或 `unknown`。样例检查了实际导出文件的 alpha 通道，可以从两份相反说法走到一条有限范围内的实测判断。
+- **复核矛盾说法**可从走查入口导入 [verification-example.csv](samples/verification-example.csv)。后四项能力均可记录 `pass`、`fail` 或 `unknown`。样例是一条虚构的 PNG alpha 通道检查记录；程序导入这条走查并关联复核依据，展示如何从两份相反说法走到一条有明确适用范围的判断。
 - **按日期复盘**时，默认取所选产品最近走查日。刚导入的材料如果晚于这个日期，可显式选择更晚的截止日。能力判断按当时可核对的产品版本取材，旧材料在证据库中保留其原始日期与版本。
 
 ## 从反馈变化到实测结论

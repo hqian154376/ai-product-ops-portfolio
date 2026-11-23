@@ -1,5 +1,6 @@
 import tempfile
 import unittest
+from contextlib import closing
 from pathlib import Path
 
 from fastapi import HTTPException
@@ -23,7 +24,7 @@ class MaterialImportTest(unittest.TestCase):
         self.assertEqual(len(materials.load_all(self.db)), before + 2)
 
     def test_optional_channel_upgrades_existing_rows_without_guessing(self):
-        with catalog.connect(self.db) as db:
+        with closing(catalog.connect(self.db)) as db, db:
             db.execute("ALTER TABLE research_materials DROP COLUMN channel")
         materials.initialize(self.db)
         self.assertEqual({r["channel"] for r in materials.load_all(self.db)}, {"unknown"})

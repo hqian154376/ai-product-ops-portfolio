@@ -1,0 +1,1936 @@
+{
+  "id": 2,
+  "as_of": "2026-10-17",
+  "intent": "opportunity",
+  "products": [
+    {
+      "sku": "INK",
+      "name": "墨汀 Studio"
+    },
+    {
+      "sku": "RILL",
+      "name": "溪屿 Canvas"
+    }
+  ],
+  "capabilities": [
+    {
+      "key": "generate",
+      "label": "首图生成",
+      "cells": [
+        {
+          "product": "INK",
+          "version": "v2",
+          "status": "verified",
+          "label": "走查已验证",
+          "note": "输入同一任务描述生成首图",
+          "refs": [
+            "INK@2026-10-17/generate"
+          ],
+          "disagreement": false,
+          "source_count": 1,
+          "signal_positions": [],
+          "walk_ref": "INK@2026-10-17/generate"
+        },
+        {
+          "product": "RILL",
+          "version": "v2",
+          "status": "verified",
+          "label": "走查已验证",
+          "note": "从画布输入任务描述并生成首图",
+          "refs": [
+            "RILL@2026-10-10/generate"
+          ],
+          "disagreement": false,
+          "source_count": 1,
+          "signal_positions": [],
+          "walk_ref": "RILL@2026-10-10/generate"
+        }
+      ]
+    },
+    {
+      "key": "iterate",
+      "label": "多轮迭代",
+      "cells": [
+        {
+          "product": "INK",
+          "version": "v2",
+          "status": "verified",
+          "label": "走查已验证",
+          "note": "当前图片可继续迭代",
+          "refs": [
+            "INK@2026-10-17/iterate"
+          ],
+          "disagreement": false,
+          "source_count": 1,
+          "signal_positions": [],
+          "walk_ref": "INK@2026-10-17/iterate"
+        },
+        {
+          "product": "RILL",
+          "version": "v2",
+          "status": "verified",
+          "label": "走查已验证",
+          "note": "选中首图继续调整色温",
+          "refs": [
+            "RILL@2026-10-10/iterate"
+          ],
+          "disagreement": false,
+          "source_count": 1,
+          "signal_positions": [],
+          "walk_ref": "RILL@2026-10-10/iterate"
+        }
+      ]
+    },
+    {
+      "key": "edit",
+      "label": "编辑衔接",
+      "cells": [
+        {
+          "product": "INK",
+          "version": "v2",
+          "status": "verified",
+          "label": "走查已验证",
+          "note": "点击局部编辑后自动带入上一轮结果，可直接选择墙面",
+          "refs": [
+            "INK@2026-10-17/edit",
+            "SIG-INK-07"
+          ],
+          "disagreement": false,
+          "source_count": 2,
+          "signal_positions": [
+            "support"
+          ],
+          "walk_ref": "INK@2026-10-17/edit"
+        },
+        {
+          "product": "RILL",
+          "version": "v2",
+          "status": "verified",
+          "label": "走查已验证",
+          "note": "点击局部编辑直接带入当前画布，选区替换墙面材质",
+          "refs": [
+            "RILL@2026-10-10/edit"
+          ],
+          "disagreement": false,
+          "source_count": 1,
+          "signal_positions": [],
+          "walk_ref": "RILL@2026-10-10/edit"
+        }
+      ]
+    },
+    {
+      "key": "mask",
+      "label": "选区精度",
+      "cells": [
+        {
+          "product": "INK",
+          "version": "v2",
+          "status": "conflict",
+          "label": "材料有分歧",
+          "note": "同版材料同时出现正向与负向信号，需要在同一任务上复测。",
+          "refs": [
+            "SIG-RADAR-13",
+            "SIG-RADAR-14",
+            "SIG-RADAR-15",
+            "SIG-INK-08",
+            "SIG-RADAR-16",
+            "SIG-RADAR-17",
+            "SIG-INK-09",
+            "SIG-RADAR-18"
+          ],
+          "disagreement": true,
+          "source_count": 7,
+          "signal_positions": [
+            "friction",
+            "support"
+          ],
+          "walk_ref": null
+        },
+        {
+          "product": "RILL",
+          "version": "v2",
+          "status": "reported",
+          "label": "材料待复验",
+          "note": "同版材料提供可用的线索，需要实际走查确认。",
+          "refs": [
+            "SIG-RILL-03"
+          ],
+          "disagreement": false,
+          "source_count": 1,
+          "signal_positions": [
+            "support"
+          ],
+          "walk_ref": null
+        }
+      ]
+    },
+    {
+      "key": "reference",
+      "label": "参考约束",
+      "cells": [
+        {
+          "product": "INK",
+          "version": "v2",
+          "status": "unknown",
+          "label": "待补证据",
+          "note": "当前批次缺少可判定的材料。",
+          "refs": [],
+          "disagreement": false,
+          "source_count": 0,
+          "signal_positions": [],
+          "walk_ref": null
+        },
+        {
+          "product": "RILL",
+          "version": "v2",
+          "status": "reported",
+          "label": "材料待复验",
+          "note": "同版材料提供可用的线索，需要实际走查确认。",
+          "refs": [
+            "SIG-RILL-02"
+          ],
+          "disagreement": false,
+          "source_count": 1,
+          "signal_positions": [
+            "support"
+          ],
+          "walk_ref": null
+        }
+      ]
+    },
+    {
+      "key": "history",
+      "label": "版本恢复",
+      "cells": [
+        {
+          "product": "INK",
+          "version": "v2",
+          "status": "reported",
+          "label": "材料待复验",
+          "note": "同版材料提供有阻碍的线索，需要实际走查确认。",
+          "refs": [
+            "SIG-INK-10"
+          ],
+          "disagreement": false,
+          "source_count": 1,
+          "signal_positions": [
+            "friction"
+          ],
+          "walk_ref": null
+        },
+        {
+          "product": "RILL",
+          "version": "v2",
+          "status": "reported",
+          "label": "材料待复验",
+          "note": "同版材料提供可用的线索，需要实际走查确认。",
+          "refs": [
+            "SIG-RADAR-03",
+            "SIG-RILL-01"
+          ],
+          "disagreement": false,
+          "source_count": 2,
+          "signal_positions": [
+            "support"
+          ],
+          "walk_ref": null
+        }
+      ]
+    },
+    {
+      "key": "export",
+      "label": "交付导出",
+      "cells": [
+        {
+          "product": "INK",
+          "version": "v2",
+          "status": "unknown",
+          "label": "待补证据",
+          "note": "当前批次缺少可判定的材料。",
+          "refs": [],
+          "disagreement": false,
+          "source_count": 0,
+          "signal_positions": [],
+          "walk_ref": null
+        },
+        {
+          "product": "RILL",
+          "version": "v2",
+          "status": "conflict",
+          "label": "材料有分歧",
+          "note": "同版材料同时出现正向与负向信号，需要在同一任务上复测。",
+          "refs": [
+            "SIG-RADAR-01",
+            "SIG-RADAR-02",
+            "SIG-RADAR-04",
+            "SIG-RADAR-05",
+            "SIG-RADAR-06",
+            "SIG-RADAR-07",
+            "SIG-RADAR-08",
+            "SIG-RADAR-09"
+          ],
+          "disagreement": true,
+          "source_count": 7,
+          "signal_positions": [
+            "friction",
+            "support"
+          ],
+          "walk_ref": null
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "title": "墨汀 Studio · 复核选区精度",
+      "priority": "优先验证",
+      "reason": "同版材料同时出现正向与负向信号，需要在同一任务上复测。",
+      "action": "固定素材、入口与参数复测，在新记录中写明测试条件和版本。",
+      "capability": "mask",
+      "experiment": "使用同一张细椅腿贴墙的测试图，只修改墙面，逐次核对选区外是否改变。",
+      "metric": "选区外发生漂移的输出数 / 有效编辑输出数",
+      "refs": [
+        "SIG-RADAR-13",
+        "SIG-RADAR-14",
+        "SIG-RADAR-15",
+        "SIG-INK-08",
+        "SIG-RADAR-16",
+        "SIG-RADAR-17",
+        "SIG-INK-09",
+        "SIG-RADAR-18"
+      ]
+    },
+    {
+      "title": "溪屿 Canvas · 复核交付导出",
+      "priority": "优先验证",
+      "reason": "同版材料同时出现正向与负向信号，需要在同一任务上复测。",
+      "action": "固定素材、入口与参数复测，在新记录中写明测试条件和版本。",
+      "capability": "export",
+      "experiment": "将同一画布导出，检查分辨率、格式及透明背景是否符合任务要求。",
+      "metric": "通过约定规格检查的文件数 / 导出文件数",
+      "refs": [
+        "SIG-RADAR-01",
+        "SIG-RADAR-02",
+        "SIG-RADAR-04",
+        "SIG-RADAR-05",
+        "SIG-RADAR-06",
+        "SIG-RADAR-07",
+        "SIG-RADAR-08",
+        "SIG-RADAR-09"
+      ]
+    },
+    {
+      "title": "墨汀 Studio · 编辑衔接转回归",
+      "priority": "转入回归",
+      "reason": "同一步骤在 v1 出现阻碍，v2 的本次走查已通过。",
+      "action": "保留两版走查作为回归用例，扩展测试不同素材与入口。",
+      "capability": "edit",
+      "experiment": "从调色后的画面进入局部编辑，核对底图与上一轮结果是否一致。",
+      "metric": "无需重传且底图正确的任务数 / 进入局部编辑的任务数",
+      "refs": [
+        "INK@2026-10-10/edit",
+        "INK@2026-10-17/edit"
+      ]
+    }
+  ],
+  "changes": [
+    {
+      "product": "INK",
+      "capability": "edit",
+      "transition": "resolved",
+      "from_version": "v1",
+      "to_version": "v2",
+      "from_date": "2026-10-10",
+      "to_date": "2026-10-17",
+      "refs": [
+        "INK@2026-10-10/edit",
+        "INK@2026-10-17/edit"
+      ]
+    },
+    {
+      "product": "INK",
+      "capability": "generate",
+      "transition": "stable",
+      "from_version": "v1",
+      "to_version": "v2",
+      "from_date": "2026-10-10",
+      "to_date": "2026-10-17",
+      "refs": [
+        "INK@2026-10-10/generate",
+        "INK@2026-10-17/generate"
+      ]
+    },
+    {
+      "product": "INK",
+      "capability": "iterate",
+      "transition": "stable",
+      "from_version": "v1",
+      "to_version": "v2",
+      "from_date": "2026-10-10",
+      "to_date": "2026-10-17",
+      "refs": [
+        "INK@2026-10-10/iterate",
+        "INK@2026-10-17/iterate"
+      ]
+    }
+  ],
+  "gaps": [
+    {
+      "product": "INK",
+      "capability": "mask",
+      "label": "选区精度",
+      "reason": "同版材料同时出现正向与负向信号，需要在同一任务上复测。",
+      "refs": [
+        "SIG-RADAR-13",
+        "SIG-RADAR-14",
+        "SIG-RADAR-15",
+        "SIG-INK-08",
+        "SIG-RADAR-16",
+        "SIG-RADAR-17",
+        "SIG-INK-09",
+        "SIG-RADAR-18"
+      ]
+    },
+    {
+      "product": "RILL",
+      "capability": "export",
+      "label": "交付导出",
+      "reason": "同版材料同时出现正向与负向信号，需要在同一任务上复测。",
+      "refs": [
+        "SIG-RADAR-01",
+        "SIG-RADAR-02",
+        "SIG-RADAR-04",
+        "SIG-RADAR-05",
+        "SIG-RADAR-06",
+        "SIG-RADAR-07",
+        "SIG-RADAR-08",
+        "SIG-RADAR-09"
+      ]
+    },
+    {
+      "product": "RILL",
+      "capability": "mask",
+      "label": "选区精度",
+      "reason": "同版材料提供可用的线索，需要实际走查确认。",
+      "refs": [
+        "SIG-RILL-03"
+      ]
+    },
+    {
+      "product": "RILL",
+      "capability": "reference",
+      "label": "参考约束",
+      "reason": "同版材料提供可用的线索，需要实际走查确认。",
+      "refs": [
+        "SIG-RILL-02"
+      ]
+    },
+    {
+      "product": "INK",
+      "capability": "history",
+      "label": "版本恢复",
+      "reason": "同版材料提供有阻碍的线索，需要实际走查确认。",
+      "refs": [
+        "SIG-INK-10"
+      ]
+    },
+    {
+      "product": "RILL",
+      "capability": "history",
+      "label": "版本恢复",
+      "reason": "同版材料提供可用的线索，需要实际走查确认。",
+      "refs": [
+        "SIG-RADAR-03",
+        "SIG-RILL-01"
+      ]
+    },
+    {
+      "product": "INK",
+      "capability": "reference",
+      "label": "参考约束",
+      "reason": "当前批次缺少可判定的材料。",
+      "refs": []
+    },
+    {
+      "product": "INK",
+      "capability": "export",
+      "label": "交付导出",
+      "reason": "当前批次缺少可判定的材料。",
+      "refs": []
+    }
+  ],
+  "coverage": {
+    "INK": 3,
+    "RILL": 3
+  },
+  "evidence": [
+    {
+      "id": "SIG-RADAR-01",
+      "product": "RILL",
+      "version": "v2",
+      "date": "2026-09-28",
+      "capability": "export",
+      "source_type": "feedback",
+      "origin": "STUDY-R01",
+      "source": "桌面素材访谈 01",
+      "position": "support",
+      "excerpt": "那周导出的透明底图能直接放在深色背景上。",
+      "channel": "interview",
+      "source_label": "用户反馈"
+    },
+    {
+      "id": "SIG-RADAR-02",
+      "product": "RILL",
+      "version": "v2",
+      "date": "2026-09-30",
+      "capability": "export",
+      "source_type": "feedback",
+      "origin": "STUDY-R02",
+      "source": "画册校对访谈 02",
+      "position": "support",
+      "excerpt": "交付的长边像素与预设一致，打印样张的细节足够。",
+      "channel": "interview",
+      "source_label": "用户反馈"
+    },
+    {
+      "id": "SIG-RADAR-03",
+      "product": "RILL",
+      "version": "v2",
+      "date": "2026-10-02",
+      "capability": "history",
+      "source_type": "feedback",
+      "origin": "STUDY-R03",
+      "source": "设计回访 03",
+      "position": "support",
+      "excerpt": "我成功恢复了前一版画布，找回最早的方案。",
+      "channel": "interview",
+      "source_label": "用户反馈"
+    },
+    {
+      "id": "SIG-RADAR-10",
+      "product": "INK",
+      "version": "v1",
+      "date": "2026-10-04",
+      "capability": "history",
+      "source_type": "feedback",
+      "origin": "STUDY-I01",
+      "source": "版本操作访谈 01",
+      "position": "support",
+      "excerpt": "恢复此前版本后，可以沿用当时的画面继续修改。",
+      "channel": "interview",
+      "source_label": "用户反馈"
+    },
+    {
+      "id": "SIG-RADAR-04",
+      "product": "RILL",
+      "version": "v2",
+      "date": "2026-10-05",
+      "capability": "export",
+      "source_type": "feedback",
+      "origin": "STUDY-R04",
+      "source": "素材交付工单 04",
+      "position": "friction",
+      "excerpt": "勾选透明背景以后把导出的标识贴到海报上，周围还是白底。",
+      "channel": "support",
+      "source_label": "用户反馈"
+    },
+    {
+      "id": "SIG-RADAR-05",
+      "product": "RILL",
+      "version": "v2",
+      "date": "2026-10-05",
+      "capability": "export",
+      "source_type": "feedback",
+      "origin": "STUDY-R04",
+      "source": "同次交付工单补充 04",
+      "position": "friction",
+      "excerpt": "同一份标识又试了一次，背景仍然变成白色底图。",
+      "channel": "support",
+      "source_label": "用户反馈"
+    },
+    {
+      "id": "SIG-RADAR-06",
+      "product": "RILL",
+      "version": "v2",
+      "date": "2026-10-07",
+      "capability": "export",
+      "source_type": "feedback",
+      "origin": "STUDY-R05",
+      "source": "社群体验摘录 05",
+      "position": "friction",
+      "excerpt": "在深色页放入刚存的透明底图，白色方块挡住了正文。",
+      "channel": "community",
+      "source_label": "用户反馈"
+    },
+    {
+      "id": "SIG-RILL-01",
+      "product": "RILL",
+      "version": "v2",
+      "date": "2026-10-07",
+      "capability": "history",
+      "source_type": "release",
+      "origin": "RILL-REL-2",
+      "source": "溪屿 v2 更新说明",
+      "position": "support",
+      "excerpt": "画布保留此前的生成分支，可从历史版本重新编辑。",
+      "channel": "unknown",
+      "source_label": "版本说明"
+    },
+    {
+      "id": "SIG-INK-01",
+      "product": "INK",
+      "version": "v1",
+      "date": "2026-10-08",
+      "capability": "edit",
+      "source_type": "release",
+      "origin": "INK-REL-1",
+      "source": "墨汀 v1 功能说明",
+      "position": "support",
+      "excerpt": "说明页将局部编辑描述为「从生成结果继续调整」；未注明进入新画布是否保留底图。",
+      "channel": "unknown",
+      "source_label": "版本说明"
+    },
+    {
+      "id": "SIG-INK-04",
+      "product": "INK",
+      "version": "v1",
+      "date": "2026-10-08",
+      "capability": "mask",
+      "source_type": "release",
+      "origin": "INK-REL-1",
+      "source": "墨汀 v1 功能说明",
+      "position": "support",
+      "excerpt": "说明页展示了选中墙面后替换材质的操作。",
+      "channel": "unknown",
+      "source_label": "版本说明"
+    },
+    {
+      "id": "SIG-INK-06",
+      "product": "INK",
+      "version": "v1",
+      "date": "2026-10-08",
+      "capability": "reference",
+      "source_type": "release",
+      "origin": "INK-REL-1",
+      "source": "墨汀 v1 功能说明",
+      "position": "support",
+      "excerpt": "说明页写明可附一张材质参考图；样例未展示多轮后是否保留约束。",
+      "channel": "unknown",
+      "source_label": "版本说明"
+    },
+    {
+      "id": "SIG-RADAR-11",
+      "product": "INK",
+      "version": "v1",
+      "date": "2026-10-08",
+      "capability": "mask",
+      "source_type": "feedback",
+      "origin": "STUDY-I02",
+      "source": "交互回访 02",
+      "position": "support",
+      "excerpt": "改用较小的画笔以后，我能单独框出靠墙的书桌。",
+      "channel": "interview",
+      "source_label": "用户反馈"
+    },
+    {
+      "id": "SIG-RILL-02",
+      "product": "RILL",
+      "version": "v2",
+      "date": "2026-10-08",
+      "capability": "reference",
+      "source_type": "feedback",
+      "origin": "INT-C",
+      "source": "使用者 C · 对照访谈",
+      "position": "support",
+      "excerpt": "材质参考图在第二轮对话后仍显示在我的画布上。",
+      "channel": "unknown",
+      "source_label": "用户反馈"
+    },
+    {
+      "id": "SIG-INK-02",
+      "product": "INK",
+      "version": "v1",
+      "date": "2026-10-09",
+      "capability": "edit",
+      "source_type": "feedback",
+      "origin": "INT-A",
+      "source": "使用者 A · 任务访谈",
+      "position": "friction",
+      "excerpt": "调完色温切到局部编辑，画布让我再选一次刚才的图片。",
+      "channel": "unknown",
+      "source_label": "用户反馈"
+    },
+    {
+      "id": "SIG-INK-03",
+      "product": "INK",
+      "version": "v1",
+      "date": "2026-10-09",
+      "capability": "edit",
+      "source_type": "feedback",
+      "origin": "INT-A",
+      "source": "使用者 A · 同一访谈摘录",
+      "position": "friction",
+      "excerpt": "第二次选图片时我不确定该选首图还是刚调过的版本。",
+      "channel": "unknown",
+      "source_label": "用户反馈"
+    },
+    {
+      "id": "SIG-INK-05",
+      "product": "INK",
+      "version": "v1",
+      "date": "2026-10-09",
+      "capability": "mask",
+      "source_type": "feedback",
+      "origin": "INT-B",
+      "source": "使用者 B · 任务访谈",
+      "position": "friction",
+      "excerpt": "框选墙面后，贴近墙面的家具边缘也被重新生成。",
+      "channel": "unknown",
+      "source_label": "用户反馈"
+    },
+    {
+      "id": "SIG-RADAR-07",
+      "product": "RILL",
+      "version": "v2",
+      "date": "2026-10-09",
+      "capability": "export",
+      "source_type": "feedback",
+      "origin": "STUDY-R06",
+      "source": "创作者求助工单 06",
+      "position": "friction",
+      "excerpt": "同事说 alpha 看起来是全满，我们还没拿到他检查的原文件。",
+      "channel": "support",
+      "source_label": "用户反馈"
+    },
+    {
+      "id": "SIG-RADAR-12",
+      "product": "INK",
+      "version": "v1",
+      "date": "2026-10-09",
+      "capability": "mask",
+      "source_type": "feedback",
+      "origin": "STUDY-I03",
+      "source": "小组讨论摘录 03",
+      "position": "unknown",
+      "excerpt": "这次操作感受和上次不同，需要重新问清具体在哪里。",
+      "channel": "community",
+      "source_label": "用户反馈"
+    },
+    {
+      "id": "SIG-RILL-03",
+      "product": "RILL",
+      "version": "v2",
+      "date": "2026-10-09",
+      "capability": "mask",
+      "source_type": "feedback",
+      "origin": "INT-D",
+      "source": "使用者 D · 对照访谈",
+      "position": "support",
+      "excerpt": "换墙面时我还能看出邻近家具原来的纹理，边界看起来留住了。",
+      "channel": "unknown",
+      "source_label": "用户反馈"
+    },
+    {
+      "id": "INK@2026-10-10/edit",
+      "product": "INK",
+      "version": "v1",
+      "date": "2026-10-10",
+      "capability": "edit",
+      "source_type": "walkthrough",
+      "origin": "INK-W1",
+      "source": "INK-W1",
+      "source_label": "任务走查",
+      "position": "friction",
+      "excerpt": "进入编辑页后画布为空，需重新上传上一轮图片"
+    },
+    {
+      "id": "INK@2026-10-10/generate",
+      "product": "INK",
+      "version": "v1",
+      "date": "2026-10-10",
+      "capability": "generate",
+      "source_type": "walkthrough",
+      "origin": "INK-W1",
+      "source": "INK-W1",
+      "source_label": "任务走查",
+      "position": "support",
+      "excerpt": "输入任务描述后生成室内首图"
+    },
+    {
+      "id": "INK@2026-10-10/iterate",
+      "product": "INK",
+      "version": "v1",
+      "date": "2026-10-10",
+      "capability": "iterate",
+      "source_type": "walkthrough",
+      "origin": "INK-W1",
+      "source": "INK-W1",
+      "source_label": "任务走查",
+      "position": "support",
+      "excerpt": "在对话框沿用首图调整整体色温"
+    },
+    {
+      "id": "RILL@2026-10-10/edit",
+      "product": "RILL",
+      "version": "v2",
+      "date": "2026-10-10",
+      "capability": "edit",
+      "source_type": "walkthrough",
+      "origin": "RILL-W1",
+      "source": "RILL-W1",
+      "source_label": "任务走查",
+      "position": "support",
+      "excerpt": "点击局部编辑直接带入当前画布，选区替换墙面材质"
+    },
+    {
+      "id": "RILL@2026-10-10/generate",
+      "product": "RILL",
+      "version": "v2",
+      "date": "2026-10-10",
+      "capability": "generate",
+      "source_type": "walkthrough",
+      "origin": "RILL-W1",
+      "source": "RILL-W1",
+      "source_label": "任务走查",
+      "position": "support",
+      "excerpt": "从画布输入任务描述并生成首图"
+    },
+    {
+      "id": "RILL@2026-10-10/iterate",
+      "product": "RILL",
+      "version": "v2",
+      "date": "2026-10-10",
+      "capability": "iterate",
+      "source_type": "walkthrough",
+      "origin": "RILL-W1",
+      "source": "RILL-W1",
+      "source_label": "任务走查",
+      "position": "support",
+      "excerpt": "选中首图继续调整色温"
+    },
+    {
+      "id": "SIG-RADAR-08",
+      "product": "RILL",
+      "version": "v2",
+      "date": "2026-10-10",
+      "capability": "export",
+      "source_type": "feedback",
+      "origin": "STUDY-R07",
+      "source": "另一位创作者复述 07",
+      "position": "support",
+      "excerpt": "我的图标导出后保留了透明背景，和页面叠放没看到白边。",
+      "channel": "interview",
+      "source_label": "用户反馈"
+    },
+    {
+      "id": "SIG-RADAR-09",
+      "product": "RILL",
+      "version": "v2",
+      "date": "2026-10-10",
+      "capability": "export",
+      "source_type": "feedback",
+      "origin": "STUDY-R08",
+      "source": "印刷交付访谈 08",
+      "position": "friction",
+      "excerpt": "海报输出尺寸比设置值小，交付前还需要核对像素尺寸。",
+      "channel": "interview",
+      "source_label": "用户反馈"
+    },
+    {
+      "id": "SIG-RADAR-13",
+      "product": "INK",
+      "version": "v2",
+      "date": "2026-10-12",
+      "capability": "mask",
+      "source_type": "feedback",
+      "origin": "STUDY-I04",
+      "source": "设计回访 04",
+      "position": "friction",
+      "excerpt": "只选墙面时窗框边缘也被涂掉一小截，换了两张图仍见到类似情况。",
+      "channel": "interview",
+      "source_label": "用户反馈"
+    },
+    {
+      "id": "SIG-RADAR-14",
+      "product": "INK",
+      "version": "v2",
+      "date": "2026-10-13",
+      "capability": "mask",
+      "source_type": "feedback",
+      "origin": "STUDY-I05",
+      "source": "社群设计讨论 05",
+      "position": "friction",
+      "excerpt": "换墙漆后选区外的挂画颜色也变动了，还没确定是不是我的选法。",
+      "channel": "community",
+      "source_label": "用户反馈"
+    },
+    {
+      "id": "SIG-RADAR-15",
+      "product": "INK",
+      "version": "v2",
+      "date": "2026-10-15",
+      "capability": "mask",
+      "source_type": "feedback",
+      "origin": "STUDY-I06",
+      "source": "编辑求助工单 06",
+      "position": "friction",
+      "excerpt": "重新生成时椅腿跟背景粘在一起，没保住原来的轮廓。",
+      "channel": "support",
+      "source_label": "用户反馈"
+    },
+    {
+      "id": "SIG-INK-07",
+      "product": "INK",
+      "version": "v2",
+      "date": "2026-10-16",
+      "capability": "edit",
+      "source_type": "release",
+      "origin": "INK-REL-2",
+      "source": "墨汀 v2 更新说明",
+      "position": "support",
+      "excerpt": "新版局部编辑入口可以沿用上一轮生成的画布。",
+      "channel": "unknown",
+      "source_label": "版本说明"
+    },
+    {
+      "id": "SIG-INK-08",
+      "product": "INK",
+      "version": "v2",
+      "date": "2026-10-16",
+      "capability": "mask",
+      "source_type": "release",
+      "origin": "INK-REL-2",
+      "source": "墨汀 v2 更新说明",
+      "position": "support",
+      "excerpt": "更新说明写明已改善细小选区边缘保留。",
+      "channel": "unknown",
+      "source_label": "版本说明"
+    },
+    {
+      "id": "SIG-RADAR-16",
+      "product": "INK",
+      "version": "v2",
+      "date": "2026-10-16",
+      "capability": "mask",
+      "source_type": "feedback",
+      "origin": "STUDY-I06",
+      "source": "同次工单补充 06",
+      "position": "friction",
+      "excerpt": "回到那张原图重试，同一条椅腿仍缺了半截。",
+      "channel": "support",
+      "source_label": "用户反馈"
+    },
+    {
+      "id": "SIG-RADAR-17",
+      "product": "INK",
+      "version": "v2",
+      "date": "2026-10-16",
+      "capability": "mask",
+      "source_type": "feedback",
+      "origin": "STUDY-I07",
+      "source": "同行测试札记 07",
+      "position": "support",
+      "excerpt": "这个样例的家具边界保住了，用的选区比上次更窄。",
+      "channel": "interview",
+      "source_label": "用户反馈"
+    },
+    {
+      "id": "INK@2026-10-17/edit",
+      "product": "INK",
+      "version": "v2",
+      "date": "2026-10-17",
+      "capability": "edit",
+      "source_type": "walkthrough",
+      "origin": "INK-W2",
+      "source": "INK-W2",
+      "source_label": "任务走查",
+      "position": "support",
+      "excerpt": "点击局部编辑后自动带入上一轮结果，可直接选择墙面"
+    },
+    {
+      "id": "INK@2026-10-17/generate",
+      "product": "INK",
+      "version": "v2",
+      "date": "2026-10-17",
+      "capability": "generate",
+      "source_type": "walkthrough",
+      "origin": "INK-W2",
+      "source": "INK-W2",
+      "source_label": "任务走查",
+      "position": "support",
+      "excerpt": "输入同一任务描述生成首图"
+    },
+    {
+      "id": "INK@2026-10-17/iterate",
+      "product": "INK",
+      "version": "v2",
+      "date": "2026-10-17",
+      "capability": "iterate",
+      "source_type": "walkthrough",
+      "origin": "INK-W2",
+      "source": "INK-W2",
+      "source_label": "任务走查",
+      "position": "support",
+      "excerpt": "当前图片可继续迭代"
+    },
+    {
+      "id": "SIG-INK-09",
+      "product": "INK",
+      "version": "v2",
+      "date": "2026-10-17",
+      "capability": "mask",
+      "source_type": "feedback",
+      "origin": "INT-E",
+      "source": "使用者 E · 新版回访",
+      "position": "friction",
+      "excerpt": "细椅腿靠着墙面时，修改墙面仍会带动一小段椅腿。",
+      "channel": "unknown",
+      "source_label": "用户反馈"
+    },
+    {
+      "id": "SIG-INK-10",
+      "product": "INK",
+      "version": "v2",
+      "date": "2026-10-17",
+      "capability": "history",
+      "source_type": "feedback",
+      "origin": "INT-E",
+      "source": "使用者 E · 新版回访",
+      "position": "friction",
+      "excerpt": "局部编辑后，我没在当前画布找到上一个版本的恢复入口。",
+      "channel": "unknown",
+      "source_label": "用户反馈"
+    },
+    {
+      "id": "SIG-RADAR-18",
+      "product": "INK",
+      "version": "v2",
+      "date": "2026-10-17",
+      "capability": "mask",
+      "source_type": "feedback",
+      "origin": "STUDY-I08",
+      "source": "画笔交互回访 08",
+      "position": "support",
+      "excerpt": "笔刷大小可以边看边改，勾轮廓时比此前顺手。",
+      "channel": "interview",
+      "source_label": "用户反馈"
+    }
+  ],
+  "trace": [
+    {
+      "step": "筛选材料",
+      "detail": "按产品与截止日筛出 40 条证据，来自 27 份去重材料。",
+      "refs": [
+        "SIG-RADAR-01",
+        "SIG-RADAR-02",
+        "SIG-RADAR-03",
+        "SIG-RADAR-10",
+        "SIG-RADAR-04",
+        "SIG-RADAR-05",
+        "SIG-RADAR-06",
+        "SIG-RILL-01",
+        "SIG-INK-01",
+        "SIG-INK-04",
+        "SIG-INK-06",
+        "SIG-RADAR-11",
+        "SIG-RILL-02",
+        "SIG-INK-02",
+        "SIG-INK-03",
+        "SIG-INK-05",
+        "SIG-RADAR-07",
+        "SIG-RADAR-12",
+        "SIG-RILL-03",
+        "INK@2026-10-10/edit",
+        "INK@2026-10-10/generate",
+        "INK@2026-10-10/iterate",
+        "RILL@2026-10-10/edit",
+        "RILL@2026-10-10/generate",
+        "RILL@2026-10-10/iterate",
+        "SIG-RADAR-08",
+        "SIG-RADAR-09",
+        "SIG-RADAR-13",
+        "SIG-RADAR-14",
+        "SIG-RADAR-15",
+        "SIG-INK-07",
+        "SIG-INK-08",
+        "SIG-RADAR-16",
+        "SIG-RADAR-17",
+        "INK@2026-10-17/edit",
+        "INK@2026-10-17/generate",
+        "INK@2026-10-17/iterate",
+        "SIG-INK-09",
+        "SIG-INK-10",
+        "SIG-RADAR-18"
+      ]
+    },
+    {
+      "step": "核对版本与步骤",
+      "detail": "读取 9 条走查，按各产品最近批次对齐七项能力；旧版本仅参与历史对照。",
+      "refs": [
+        "INK@2026-10-10/edit",
+        "INK@2026-10-10/generate",
+        "INK@2026-10-10/iterate",
+        "RILL@2026-10-10/edit",
+        "RILL@2026-10-10/generate",
+        "RILL@2026-10-10/iterate",
+        "INK@2026-10-17/edit",
+        "INK@2026-10-17/generate",
+        "INK@2026-10-17/iterate"
+      ]
+    },
+    {
+      "step": "检查相反信号",
+      "detail": "发现 2 个存在分歧的矩阵单元。",
+      "refs": [
+        "SIG-RADAR-13",
+        "SIG-RADAR-14",
+        "SIG-RADAR-15",
+        "SIG-INK-08",
+        "SIG-RADAR-16",
+        "SIG-RADAR-17",
+        "SIG-INK-09",
+        "SIG-RADAR-18",
+        "SIG-RADAR-01",
+        "SIG-RADAR-02",
+        "SIG-RADAR-04",
+        "SIG-RADAR-05",
+        "SIG-RADAR-06",
+        "SIG-RADAR-07",
+        "SIG-RADAR-08",
+        "SIG-RADAR-09"
+      ]
+    },
+    {
+      "step": "机会优先级",
+      "detail": "产出 3 项判断，关联可复验步骤及指标口径。",
+      "refs": [
+        "SIG-RADAR-13",
+        "SIG-RADAR-14",
+        "SIG-RADAR-15",
+        "SIG-INK-08",
+        "SIG-RADAR-16",
+        "SIG-RADAR-17",
+        "SIG-INK-09",
+        "SIG-RADAR-18",
+        "SIG-RADAR-01",
+        "SIG-RADAR-02",
+        "SIG-RADAR-04",
+        "SIG-RADAR-05",
+        "SIG-RADAR-06",
+        "SIG-RADAR-07",
+        "SIG-RADAR-08",
+        "SIG-RADAR-09",
+        "INK@2026-10-10/edit",
+        "INK@2026-10-17/edit"
+      ]
+    },
+    {
+      "step": "read_feedback_trends",
+      "detail": "读取 7 天双窗口，返回 4 个主题的分子与分母",
+      "refs": []
+    },
+    {
+      "step": "read_feedback_trends",
+      "detail": "读取 7 天双窗口，返回 4 个主题的分子与分母",
+      "refs": []
+    },
+    {
+      "step": "list_changes",
+      "detail": "检查 3 条可复核的版本变化",
+      "refs": []
+    },
+    {
+      "step": "find_evidence",
+      "detail": "找到 6 条材料索引，返回 6 条",
+      "refs": []
+    },
+    {
+      "step": "find_evidence",
+      "detail": "找到 1 条材料索引，返回 1 条",
+      "refs": []
+    },
+    {
+      "step": "open_evidence",
+      "detail": "读取 10 条带日期与出处的原文",
+      "refs": [
+        "INK@2026-10-10/edit",
+        "INK@2026-10-17/edit",
+        "SIG-INK-01",
+        "SIG-INK-02",
+        "SIG-INK-07",
+        "SIG-INK-09",
+        "SIG-RADAR-17",
+        "SIG-INK-05",
+        "SIG-RADAR-16",
+        "SIG-RILL-03"
+      ]
+    },
+    {
+      "step": "open_evidence",
+      "detail": "读取 4 条带日期与出处的原文",
+      "refs": [
+        "SIG-INK-03",
+        "SIG-RADAR-16",
+        "RILL@2026-10-10/edit",
+        "SIG-INK-10"
+      ]
+    },
+    {
+      "step": "程序核算反馈双窗口",
+      "detail": "按 7 天核算 2 个主题",
+      "refs": [
+        "SIG-INK-09",
+        "SIG-RADAR-17",
+        "SIG-RILL-03"
+      ]
+    }
+  ],
+  "markdown": "## 程序核算\n本期 2026-10-11 至 2026-10-17，上期 2026-10-04 至 2026-10-10。\n分母为本产品在对应窗口收录的全部独立反馈来源，每个主题内按来源去重。\n\n### 墨汀 Studio · 选区外细节保留\n- 本期：提及 5/6，其中登记负向的来源为 4/6。\n- 上期：提及 1/5，其中登记负向的来源为 1/5。\n主题渠道（本期/上期独立来源数）：访谈 2/0、社群反馈 1/0、支持工单 1/0、渠道未登记 1/1。同一来源在当期只计入一个渠道，不同主题可能共享来源。\n- 登记负向原文（2026-10-17）：[SIG-INK-09]\n- 登记正向原文（2026-10-16）：[SIG-RADAR-17]\n核算结果：升温，达到复验提醒门槛。\n\n### 溪屿 Canvas · 选区外细节保留\n- 本期：提及 无样本，其中登记负向的来源为 无样本。\n- 上期：提及 1/7，其中登记负向的来源为 0/7。\n主题渠道（本期/上期独立来源数）：渠道未登记 0/1。同一来源在当期只计入一个渠道，不同主题可能共享来源。\n- 登记正向原文（2026-10-09）：[SIG-RILL-03]\n核算结果：本期无反馈。\n\n## 模型解读\n## 核心判断\n\n**1. 选区外细节保留：墨汀是本期升温点，溪屿本期无材料可比。**\n\n- 墨汀“选区外细节保留”负向来源达到复验门槛，属趋势异动，不是单条抱怨。代表线索：新版回访提到改墙面会带动紧贴墙面的细椅腿 [SIG-INK-09]；工单侧补充称回原图重试同一椅腿仍缺半截 [SIG-RADAR-16]；v1 时期同类问题也出现过（框选墙面后贴近墙面的家具边缘被重新生成）[SIG-INK-05]。注意这些是用户/工单自述，不能证明产品存在缺陷，需复测定位是选区边界算法、扩边生效还是重生成扩散导致。\n- 溪屿一侧材料不足：本期 0 份来源，仅上期 1 份正向线索（“换墙面时邻近家具纹理还在，边界保住了”，渠道未登记）[SIG-RILL-03]。这是单次对照访谈的正例，不能推断溪屿整体更好。\n- 说明：墨汀本轮负向集中在“边界带内邻近物体被带入”，但同批也有一条正向线索——家具边界保住了，但因选区收得更窄 [SIG-RADAR-17]。这提示“保细节”可能被用户用“缩窄选区”自行绕过，代价是编辑不完整，实验需同时记录选区宽度与最终覆盖是否达标。\n\n**2. 墨汀编辑入口：v1 走查已复现摩擦，v2 走查显示已修复（可转回归）。**\n\n- v1 走查：进入编辑页后画布为空，需重新上传上一轮图片 [INK@2026-10-10/edit]；同期的访谈也记录了选择困惑（不确定该选首图还是刚调过的版本）[SIG-INK-03]。\n- v2 走查：点击局部编辑后自动带入上一轮结果，可直接选择墙面 [INK@2026-10-17/edit]。前后两条走查对照，任务路径由“空画布重传”变为“自动带入”，因此可判定已实测通过、可转回归。\n- 厂商侧口径只作辅助：v1 说明尚未写明是否保留底图 [SIG-INK-01]，v2 更新说明声称入口沿用上一轮画布 [SIG-INK-07]；不能以公告替代走查。\n- 反馈侧对应降温（编辑入口传图本期无来源），但样本少，不能作为修复有效的独立证明；修复结论仍以走查为准。\n- 新暴露的相邻缺口：局部编辑后找不到上一版本的恢复入口 [SIG-INK-10]，与“自动带入”后用户想回退的场景相关，建议顺带核查。\n\n## 优先验证的产品机会\n\n**“自动带入画布 + 边界保护”的一体化优势位**。墨汀 v2 在编辑入口上已与溪屿同向（溪屿走查也记录“点击局部编辑直接带入当前画布，选区替换墙面材质” [RILL@2026-10-10/edit]），因此入口自动化不再构成差异点；真正未决的是边界细节。墨汀 v2 已具备能守住家具边界的样例 [SIG-RADAR-17]，说明能力存在，痛点在于失败条件未被收敛。若能把失败条件（细杆状、紧贴墙面的物体）稳定消除，就能把“改墙面不动家具”做成可兑现的卖点，而不是让用户自己缩选区换精度。\n\n## 一个成功反例（用于界定边界）\n\n成功案例见 [SIG-RADAR-17]：同一批墨汀 v2 测试中，家具边界保住。关键条件是该样例使用了更窄的选区——可见“保边界”在窄选区下可达成，失败并非全量发生。这反例的价值是告诉我们：**要区分“算法边界不行”与“选区自动扩边过量”**。实验须把选区宽度设为受控变量，否则会把成功归因错。\n\n## 下一步实验与观测口径\n\n1. **边界失败条件实验（墨汀 v2）**：固定同批图像任务，按物体形态分层：细杆/细腿类 vs 面状家具 vs 无邻近物体；每层再按选区宽度分层（窄选区 / 用户自然选区 / 系统建议选区）。每组多次重复以避免单次生成随机性。\n   - 主指标：选区外物体像素/结构改变率（自动化比对，人工双盲抽检复核）。\n   - 次指标：用户主观“边界保住了”判断（同题 5 点量表）、编辑目标达成率、是否需要缩窄选区。\n   - 判定成功：需要“边界改变率显著下降且任务达成率不下降”；只降边界但达成率下降，视为把成本转移给了用户，不算成功。\n2. **编辑入口回归**：按 v2 走查路径 [INK@2026-10-17/edit] 做回归用例，覆盖“编辑后想回退”的新场景 [SIG-INK-10]，明确恢复入口的预期行为。\n3. **溪屿对照补料**：溪屿本期零来源，需按同脚本补做走查与用户任务测试，才能在边界保留上做同口径比较；在此之前只能写“材料不足”。\n\n## 仍缺证据\n\n- 边界问题的机制未知（选区扩边、遮罩羽化、上下文重绘，均未测），现有材料只是用户归因。\n- 溪屿边界保留缺少现行版本走查与本期样本，无法判断其是否稳定。\n- 反馈来源量小、渠道多未登记，不能推导总体比例，也不能用于估算用户规模或修复收益。\n- “已修复”仅限 v2 走查当时记录的那条编辑入口路径，未覆盖其他入口与异常路径。",
+  "feedback_radar": {
+    "as_of": "2026-10-17",
+    "window_days": 7,
+    "periods": {
+      "current": {
+        "start": "2026-10-11",
+        "end": "2026-10-17"
+      },
+      "previous": {
+        "start": "2026-10-04",
+        "end": "2026-10-10"
+      }
+    },
+    "coverage": [
+      {
+        "product": "INK",
+        "current_total": 6,
+        "previous_total": 5
+      },
+      {
+        "product": "RILL",
+        "current_total": 0,
+        "previous_total": 7
+      }
+    ],
+    "channel_mix": [
+      {
+        "product": "INK",
+        "channel": "interview",
+        "label": "访谈",
+        "current_sources": 3,
+        "previous_sources": 2,
+        "current_negative": 1,
+        "previous_negative": 0
+      },
+      {
+        "product": "INK",
+        "channel": "community",
+        "label": "社群反馈",
+        "current_sources": 1,
+        "previous_sources": 1,
+        "current_negative": 1,
+        "previous_negative": 0
+      },
+      {
+        "product": "INK",
+        "channel": "support",
+        "label": "支持工单",
+        "current_sources": 1,
+        "previous_sources": 0,
+        "current_negative": 1,
+        "previous_negative": 0
+      },
+      {
+        "product": "INK",
+        "channel": "unknown",
+        "label": "渠道未登记",
+        "current_sources": 1,
+        "previous_sources": 2,
+        "current_negative": 1,
+        "previous_negative": 2
+      },
+      {
+        "product": "RILL",
+        "channel": "community",
+        "label": "社群反馈",
+        "current_sources": 0,
+        "previous_sources": 1,
+        "current_negative": 0,
+        "previous_negative": 1
+      },
+      {
+        "product": "RILL",
+        "channel": "interview",
+        "label": "访谈",
+        "current_sources": 0,
+        "previous_sources": 2,
+        "current_negative": 0,
+        "previous_negative": 1
+      },
+      {
+        "product": "RILL",
+        "channel": "support",
+        "label": "支持工单",
+        "current_sources": 0,
+        "previous_sources": 2,
+        "current_negative": 0,
+        "previous_negative": 2
+      },
+      {
+        "product": "RILL",
+        "channel": "unknown",
+        "label": "渠道未登记",
+        "current_sources": 0,
+        "previous_sources": 2,
+        "current_negative": 0,
+        "previous_negative": 0
+      }
+    ],
+    "topics": [
+      {
+        "id": "INK:mask:boundary",
+        "product": "INK",
+        "capability": "mask",
+        "label": "选区外细节保留",
+        "current_sources": 5,
+        "previous_sources": 1,
+        "current_total": 6,
+        "previous_total": 5,
+        "current_negative": 4,
+        "previous_negative": 1,
+        "current_positive": 1,
+        "previous_positive": 0,
+        "trend": "升温",
+        "reason": "本期 5/6 份来源提及；上期 1/5 份。 其中负向来源从 1/5 增至 4/6，达到复验门槛。",
+        "needs_review": true,
+        "first_seen": "2026-10-09",
+        "last_seen": "2026-10-17",
+        "current_refs": [
+          "SIG-RADAR-13",
+          "SIG-RADAR-14",
+          "SIG-RADAR-15",
+          "SIG-RADAR-16",
+          "SIG-RADAR-17",
+          "SIG-INK-09"
+        ],
+        "previous_refs": [
+          "SIG-INK-05"
+        ],
+        "refs": [
+          "SIG-INK-05",
+          "SIG-RADAR-13",
+          "SIG-RADAR-14",
+          "SIG-RADAR-15",
+          "SIG-RADAR-16",
+          "SIG-RADAR-17",
+          "SIG-INK-09"
+        ],
+        "representatives": [
+          {
+            "id": "SIG-INK-09",
+            "source": "使用者 E · 新版回访",
+            "origin": "INT-E",
+            "date": "2026-10-17",
+            "excerpt": "细椅腿靠着墙面时，修改墙面仍会带动一小段椅腿。",
+            "position": "friction"
+          },
+          {
+            "id": "SIG-RADAR-17",
+            "source": "同行测试札记 07",
+            "origin": "STUDY-I07",
+            "date": "2026-10-16",
+            "excerpt": "这个样例的家具边界保住了，用的选区比上次更窄。",
+            "position": "support"
+          },
+          {
+            "id": "SIG-INK-05",
+            "source": "使用者 B · 任务访谈",
+            "origin": "INT-B",
+            "date": "2026-10-09",
+            "excerpt": "框选墙面后，贴近墙面的家具边缘也被重新生成。",
+            "position": "friction"
+          },
+          {
+            "id": "SIG-RADAR-16",
+            "source": "同次工单补充 06",
+            "origin": "STUDY-I06",
+            "date": "2026-10-16",
+            "excerpt": "回到那张原图重试，同一条椅腿仍缺了半截。",
+            "position": "friction"
+          }
+        ],
+        "channel_mix": [
+          {
+            "product": "INK",
+            "channel": "interview",
+            "label": "访谈",
+            "current_sources": 2,
+            "previous_sources": 0,
+            "current_negative": 1,
+            "previous_negative": 0
+          },
+          {
+            "product": "INK",
+            "channel": "community",
+            "label": "社群反馈",
+            "current_sources": 1,
+            "previous_sources": 0,
+            "current_negative": 1,
+            "previous_negative": 0
+          },
+          {
+            "product": "INK",
+            "channel": "support",
+            "label": "支持工单",
+            "current_sources": 1,
+            "previous_sources": 0,
+            "current_negative": 1,
+            "previous_negative": 0
+          },
+          {
+            "product": "INK",
+            "channel": "unknown",
+            "label": "渠道未登记",
+            "current_sources": 1,
+            "previous_sources": 1,
+            "current_negative": 1,
+            "previous_negative": 1
+          }
+        ]
+      },
+      {
+        "id": "INK:history:restore",
+        "product": "INK",
+        "capability": "history",
+        "label": "恢复此前版本",
+        "current_sources": 1,
+        "previous_sources": 1,
+        "current_total": 6,
+        "previous_total": 5,
+        "current_negative": 1,
+        "previous_negative": 0,
+        "current_positive": 0,
+        "previous_positive": 1,
+        "trend": "变化有限",
+        "reason": "本期 1/6 份来源提及；上期 1/5 份。",
+        "needs_review": false,
+        "first_seen": "2026-10-04",
+        "last_seen": "2026-10-17",
+        "current_refs": [
+          "SIG-INK-10"
+        ],
+        "previous_refs": [
+          "SIG-RADAR-10"
+        ],
+        "refs": [
+          "SIG-RADAR-10",
+          "SIG-INK-10"
+        ],
+        "representatives": [
+          {
+            "id": "SIG-INK-10",
+            "source": "使用者 E · 新版回访",
+            "origin": "INT-E",
+            "date": "2026-10-17",
+            "excerpt": "局部编辑后，我没在当前画布找到上一个版本的恢复入口。",
+            "position": "friction"
+          },
+          {
+            "id": "SIG-RADAR-10",
+            "source": "版本操作访谈 01",
+            "origin": "STUDY-I01",
+            "date": "2026-10-04",
+            "excerpt": "恢复此前版本后，可以沿用当时的画面继续修改。",
+            "position": "support"
+          }
+        ],
+        "channel_mix": [
+          {
+            "product": "INK",
+            "channel": "unknown",
+            "label": "渠道未登记",
+            "current_sources": 1,
+            "previous_sources": 0,
+            "current_negative": 1,
+            "previous_negative": 0
+          },
+          {
+            "product": "INK",
+            "channel": "interview",
+            "label": "访谈",
+            "current_sources": 0,
+            "previous_sources": 1,
+            "current_negative": 0,
+            "previous_negative": 0
+          }
+        ]
+      },
+      {
+        "id": "INK:mask:brush",
+        "product": "INK",
+        "capability": "mask",
+        "label": "选区绘制操控",
+        "current_sources": 1,
+        "previous_sources": 1,
+        "current_total": 6,
+        "previous_total": 5,
+        "current_negative": 0,
+        "previous_negative": 0,
+        "current_positive": 1,
+        "previous_positive": 1,
+        "trend": "变化有限",
+        "reason": "本期 1/6 份来源提及；上期 1/5 份。",
+        "needs_review": false,
+        "first_seen": "2026-10-08",
+        "last_seen": "2026-10-17",
+        "current_refs": [
+          "SIG-RADAR-18"
+        ],
+        "previous_refs": [
+          "SIG-RADAR-11"
+        ],
+        "refs": [
+          "SIG-RADAR-11",
+          "SIG-RADAR-18"
+        ],
+        "representatives": [
+          {
+            "id": "SIG-RADAR-18",
+            "source": "画笔交互回访 08",
+            "origin": "STUDY-I08",
+            "date": "2026-10-17",
+            "excerpt": "笔刷大小可以边看边改，勾轮廓时比此前顺手。",
+            "position": "support"
+          },
+          {
+            "id": "SIG-RADAR-11",
+            "source": "交互回访 02",
+            "origin": "STUDY-I02",
+            "date": "2026-10-08",
+            "excerpt": "改用较小的画笔以后，我能单独框出靠墙的书桌。",
+            "position": "support"
+          }
+        ],
+        "channel_mix": [
+          {
+            "product": "INK",
+            "channel": "interview",
+            "label": "访谈",
+            "current_sources": 1,
+            "previous_sources": 1,
+            "current_negative": 0,
+            "previous_negative": 0
+          }
+        ]
+      },
+      {
+        "id": "INK:edit:handoff",
+        "product": "INK",
+        "capability": "edit",
+        "label": "编辑入口传图",
+        "current_sources": 0,
+        "previous_sources": 1,
+        "current_total": 6,
+        "previous_total": 5,
+        "current_negative": 0,
+        "previous_negative": 1,
+        "current_positive": 0,
+        "previous_positive": 0,
+        "trend": "降温",
+        "reason": "本期 0/6 份来源提及；上期 1/5 份。",
+        "needs_review": false,
+        "first_seen": "2026-10-09",
+        "last_seen": "2026-10-09",
+        "current_refs": [],
+        "previous_refs": [
+          "SIG-INK-02",
+          "SIG-INK-03"
+        ],
+        "refs": [
+          "SIG-INK-02",
+          "SIG-INK-03"
+        ],
+        "representatives": [
+          {
+            "id": "SIG-INK-03",
+            "source": "使用者 A · 同一访谈摘录",
+            "origin": "INT-A",
+            "date": "2026-10-09",
+            "excerpt": "第二次选图片时我不确定该选首图还是刚调过的版本。",
+            "position": "friction"
+          }
+        ],
+        "channel_mix": [
+          {
+            "product": "INK",
+            "channel": "unknown",
+            "label": "渠道未登记",
+            "current_sources": 0,
+            "previous_sources": 1,
+            "current_negative": 0,
+            "previous_negative": 1
+          }
+        ]
+      },
+      {
+        "id": "RILL:export:alpha",
+        "product": "RILL",
+        "capability": "export",
+        "label": "透明背景导出",
+        "current_sources": 0,
+        "previous_sources": 4,
+        "current_total": 0,
+        "previous_total": 7,
+        "current_negative": 0,
+        "previous_negative": 3,
+        "current_positive": 0,
+        "previous_positive": 1,
+        "trend": "本期无反馈",
+        "reason": "本期没有反馈来源；上期 4/7 份。",
+        "needs_review": false,
+        "first_seen": "2026-10-05",
+        "last_seen": "2026-10-10",
+        "current_refs": [],
+        "previous_refs": [
+          "SIG-RADAR-04",
+          "SIG-RADAR-05",
+          "SIG-RADAR-06",
+          "SIG-RADAR-07",
+          "SIG-RADAR-08"
+        ],
+        "refs": [
+          "SIG-RADAR-04",
+          "SIG-RADAR-05",
+          "SIG-RADAR-06",
+          "SIG-RADAR-07",
+          "SIG-RADAR-08"
+        ],
+        "representatives": [
+          {
+            "id": "SIG-RADAR-08",
+            "source": "另一位创作者复述 07",
+            "origin": "STUDY-R07",
+            "date": "2026-10-10",
+            "excerpt": "我的图标导出后保留了透明背景，和页面叠放没看到白边。",
+            "position": "support"
+          }
+        ],
+        "channel_mix": [
+          {
+            "product": "RILL",
+            "channel": "community",
+            "label": "社群反馈",
+            "current_sources": 0,
+            "previous_sources": 1,
+            "current_negative": 0,
+            "previous_negative": 1
+          },
+          {
+            "product": "RILL",
+            "channel": "interview",
+            "label": "访谈",
+            "current_sources": 0,
+            "previous_sources": 1,
+            "current_negative": 0,
+            "previous_negative": 0
+          },
+          {
+            "product": "RILL",
+            "channel": "support",
+            "label": "支持工单",
+            "current_sources": 0,
+            "previous_sources": 2,
+            "current_negative": 0,
+            "previous_negative": 2
+          }
+        ]
+      },
+      {
+        "id": "RILL:export:size",
+        "product": "RILL",
+        "capability": "export",
+        "label": "导出分辨率",
+        "current_sources": 0,
+        "previous_sources": 1,
+        "current_total": 0,
+        "previous_total": 7,
+        "current_negative": 0,
+        "previous_negative": 1,
+        "current_positive": 0,
+        "previous_positive": 0,
+        "trend": "本期无反馈",
+        "reason": "本期没有反馈来源；上期 1/7 份。",
+        "needs_review": false,
+        "first_seen": "2026-10-10",
+        "last_seen": "2026-10-10",
+        "current_refs": [],
+        "previous_refs": [
+          "SIG-RADAR-09"
+        ],
+        "refs": [
+          "SIG-RADAR-09"
+        ],
+        "representatives": [
+          {
+            "id": "SIG-RADAR-09",
+            "source": "印刷交付访谈 08",
+            "origin": "STUDY-R08",
+            "date": "2026-10-10",
+            "excerpt": "海报输出尺寸比设置值小，交付前还需要核对像素尺寸。",
+            "position": "friction"
+          }
+        ],
+        "channel_mix": [
+          {
+            "product": "RILL",
+            "channel": "interview",
+            "label": "访谈",
+            "current_sources": 0,
+            "previous_sources": 1,
+            "current_negative": 0,
+            "previous_negative": 1
+          }
+        ]
+      },
+      {
+        "id": "RILL:mask:boundary",
+        "product": "RILL",
+        "capability": "mask",
+        "label": "选区外细节保留",
+        "current_sources": 0,
+        "previous_sources": 1,
+        "current_total": 0,
+        "previous_total": 7,
+        "current_negative": 0,
+        "previous_negative": 0,
+        "current_positive": 0,
+        "previous_positive": 1,
+        "trend": "本期无反馈",
+        "reason": "本期没有反馈来源；上期 1/7 份。",
+        "needs_review": false,
+        "first_seen": "2026-10-09",
+        "last_seen": "2026-10-09",
+        "current_refs": [],
+        "previous_refs": [
+          "SIG-RILL-03"
+        ],
+        "refs": [
+          "SIG-RILL-03"
+        ],
+        "representatives": [
+          {
+            "id": "SIG-RILL-03",
+            "source": "使用者 D · 对照访谈",
+            "origin": "INT-D",
+            "date": "2026-10-09",
+            "excerpt": "换墙面时我还能看出邻近家具原来的纹理，边界看起来留住了。",
+            "position": "support"
+          }
+        ],
+        "channel_mix": [
+          {
+            "product": "RILL",
+            "channel": "unknown",
+            "label": "渠道未登记",
+            "current_sources": 0,
+            "previous_sources": 1,
+            "current_negative": 0,
+            "previous_negative": 0
+          }
+        ]
+      },
+      {
+        "id": "RILL:reference:retention",
+        "product": "RILL",
+        "capability": "reference",
+        "label": "跨轮参考图保留",
+        "current_sources": 0,
+        "previous_sources": 1,
+        "current_total": 0,
+        "previous_total": 7,
+        "current_negative": 0,
+        "previous_negative": 0,
+        "current_positive": 0,
+        "previous_positive": 1,
+        "trend": "本期无反馈",
+        "reason": "本期没有反馈来源；上期 1/7 份。",
+        "needs_review": false,
+        "first_seen": "2026-10-08",
+        "last_seen": "2026-10-08",
+        "current_refs": [],
+        "previous_refs": [
+          "SIG-RILL-02"
+        ],
+        "refs": [
+          "SIG-RILL-02"
+        ],
+        "representatives": [
+          {
+            "id": "SIG-RILL-02",
+            "source": "使用者 C · 对照访谈",
+            "origin": "INT-C",
+            "date": "2026-10-08",
+            "excerpt": "材质参考图在第二轮对话后仍显示在我的画布上。",
+            "position": "support"
+          }
+        ],
+        "channel_mix": [
+          {
+            "product": "RILL",
+            "channel": "unknown",
+            "label": "渠道未登记",
+            "current_sources": 0,
+            "previous_sources": 1,
+            "current_negative": 0,
+            "previous_negative": 0
+          }
+        ]
+      }
+    ],
+    "alerts": [
+      {
+        "topic_id": "INK:mask:boundary",
+        "product": "INK",
+        "capability": "mask",
+        "label": "选区外细节保留",
+        "reason": "本期 5/6 份来源提及；上期 1/5 份。 其中负向来源从 1/5 增至 4/6，达到复验门槛。",
+        "refs": [
+          "SIG-INK-05",
+          "SIG-RADAR-13",
+          "SIG-RADAR-14",
+          "SIG-RADAR-15",
+          "SIG-RADAR-16",
+          "SIG-RADAR-17",
+          "SIG-INK-09"
+        ],
+        "priority": "待复验",
+        "channel_mix": [
+          {
+            "product": "INK",
+            "channel": "interview",
+            "label": "访谈",
+            "current_sources": 2,
+            "previous_sources": 0,
+            "current_negative": 1,
+            "previous_negative": 0
+          },
+          {
+            "product": "INK",
+            "channel": "community",
+            "label": "社群反馈",
+            "current_sources": 1,
+            "previous_sources": 0,
+            "current_negative": 1,
+            "previous_negative": 0
+          },
+          {
+            "product": "INK",
+            "channel": "support",
+            "label": "支持工单",
+            "current_sources": 1,
+            "previous_sources": 0,
+            "current_negative": 1,
+            "previous_negative": 0
+          },
+          {
+            "product": "INK",
+            "channel": "unknown",
+            "label": "渠道未登记",
+            "current_sources": 1,
+            "previous_sources": 1,
+            "current_negative": 1,
+            "previous_negative": 1
+          }
+        ]
+      }
+    ],
+    "unclassified": {
+      "count": 1,
+      "refs": [
+        "SIG-RADAR-12"
+      ]
+    },
+    "method": "仅分析用户反馈摘录。先按能力与主题短语归类；无直接命中时用连续双字比对，相似度不足或难以区分的摘录留待归类。一条摘录可直接命中多个主题。同一来源在一期内涉及多个已登记渠道时归入跨渠道，只计算一次；旧材料保留为渠道未登记。正负倾向来自材料登记。每期每个产品按来源编号去重，一份来源在一个主题内最多计一次；同一来源同时有正反例时，两种倾向各记一次。分母含该产品在本期的全部反馈来源。主题热度是样本内占比。每期至少有两份来源、涉及该主题的来源数有变化且占比相差至少20个百分点时，标记升温或降温。负向异动需上期至少两份来源、本期至少三份独立负向来源、负向来源净增至少两份且占比增加至少20个百分点。以上口径用于安排复验；当前样本不能估算线上故障率或用户总量。"
+  },
+  "title": "墨汀 Studio / 溪屿 Canvas · 机会评估",
+  "created_at": "2026-11-23T18:35:13+00:00",
+  "mode": "model",
+  "model": "deepseek-flash",
+  "question": "比较墨汀与溪屿最近七天和前七天的选区外细节保留反馈。检查墨汀的编辑入口从 v1 到 v2 是否已修复，读取前后走查原文并引用。给出优先验证的产品机会、一个成功反例和具体实验口径。请简洁回答，不重复程序已列出的统计表。",
+  "cited_refs": [
+    "INK@2026-10-10/edit",
+    "INK@2026-10-17/edit",
+    "RILL@2026-10-10/edit",
+    "SIG-INK-01",
+    "SIG-INK-03",
+    "SIG-INK-05",
+    "SIG-INK-07",
+    "SIG-INK-09",
+    "SIG-INK-10",
+    "SIG-RADAR-16",
+    "SIG-RADAR-17",
+    "SIG-RILL-03"
+  ],
+  "program_refs": [
+    "SIG-INK-09",
+    "SIG-RADAR-17",
+    "SIG-RILL-03"
+  ],
+  "model_trace": [
+    {
+      "step": "read_feedback_trends",
+      "detail": "读取 7 天双窗口，返回 4 个主题的分子与分母",
+      "refs": []
+    },
+    {
+      "step": "read_feedback_trends",
+      "detail": "读取 7 天双窗口，返回 4 个主题的分子与分母",
+      "refs": []
+    },
+    {
+      "step": "list_changes",
+      "detail": "检查 3 条可复核的版本变化",
+      "refs": []
+    },
+    {
+      "step": "find_evidence",
+      "detail": "找到 6 条材料索引，返回 6 条",
+      "refs": []
+    },
+    {
+      "step": "find_evidence",
+      "detail": "找到 1 条材料索引，返回 1 条",
+      "refs": []
+    },
+    {
+      "step": "open_evidence",
+      "detail": "读取 10 条带日期与出处的原文",
+      "refs": [
+        "INK@2026-10-10/edit",
+        "INK@2026-10-17/edit",
+        "SIG-INK-01",
+        "SIG-INK-02",
+        "SIG-INK-07",
+        "SIG-INK-09",
+        "SIG-RADAR-17",
+        "SIG-INK-05",
+        "SIG-RADAR-16",
+        "SIG-RILL-03"
+      ]
+    },
+    {
+      "step": "open_evidence",
+      "detail": "读取 4 条带日期与出处的原文",
+      "refs": [
+        "SIG-INK-03",
+        "SIG-RADAR-16",
+        "RILL@2026-10-10/edit",
+        "SIG-INK-10"
+      ]
+    }
+  ],
+  "counts": {
+    "materials": 11,
+    "observations": 13,
+    "citations": 12
+  }
+}

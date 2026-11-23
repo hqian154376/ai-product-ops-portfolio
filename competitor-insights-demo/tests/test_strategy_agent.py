@@ -3,6 +3,7 @@ import json
 import sqlite3
 import tempfile
 import unittest
+from contextlib import closing
 from pathlib import Path
 
 import httpx
@@ -149,7 +150,7 @@ class ResearchTests(unittest.TestCase):
 
     def test_upgrade_preserves_existing_reports(self):
         path = Path(self.enterContext(tempfile.TemporaryDirectory())) / "old.db"
-        with sqlite3.connect(path) as db:
+        with closing(sqlite3.connect(path)) as db, db:
             db.execute("CREATE TABLE reports (id INTEGER PRIMARY KEY, snapshot TEXT NOT NULL)")
             db.execute("INSERT INTO reports(snapshot) values (?)", (json.dumps({"title":"旧报告"}),))
         client = self.client(path=path)
