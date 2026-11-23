@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#112e39">
+  <title>竞品观察室 · 研究决策台</title>
+  <link rel="stylesheet" href="/static/research.css">
+  <script src="/static/research.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#workspace">跳到研究工作区</a>
+<header class="mast"><div class="wrap nav">
+  <a class="wordmark" href="/"><span class="mark" aria-hidden="true">◧</span>竞品观察室</a>
+  <nav aria-label="工作区"><a href="/" aria-current="page">研究决策台</a><a href="/static/radar.html">反馈雷达</a><a href="/static/walkthrough.html">原始走查</a><button type="button" id="history-open">报告库</button></nav>
+</div></header>
+<main id="workspace" class="wrap">
+  <div class="intro"><div><h1>竞品研究决策台</h1><p>把任务走查、版本公告与用户反馈放在一起，判断下一项值得验证的产品改动。</p></div>
+    <div class="import-tools"><a href="/static/model-replay.html" class="secondary">查看真实模型回放</a><button type="button" id="import-open" class="secondary">导入研究材料</button><input type="file" accept=".csv,text/csv" id="csv-file" hidden><input type="file" accept=".csv,text/csv" id="source-file" hidden></div>
+  </div>
+  <form id="setup" class="setup" aria-label="研究设置">
+    <div class="settings-head"><fieldset><legend class="hidden-label">研究任务</legend><div class="intents">
+      <label><input type="radio" name="intent" value="opportunity" checked><span>机会优先级</span></label>
+      <label><input type="radio" name="intent" value="benchmark"><span>能力对标</span></label>
+      <label><input type="radio" name="intent" value="change"><span>版本复验</span></label>
+    </div></fieldset><span id="mode" class="mode">读取配置…</span></div>
+    <div class="controls">
+      <label class="field">研究对象<select id="left" required></select></label>
+      <label class="field">对标产品<select id="right" required></select></label>
+      <label class="field">研究截止日 <span class="sub">留空取最新</span><input type="date" id="as-of"></label>
+    </div>
+    <div class="question-row"><label class="field">研究问题<textarea id="question" rows="1" required maxlength="2000">哪项创作流程改动最值得优先验证？现有证据支持什么结论？</textarea></label>
+      <button type="submit" id="generate" class="primary" disabled>生成研究报告 <span aria-hidden="true">→</span></button></div><p id="question-hint" class="sub"></p>
+  </form>
+  <p id="notice" role="status" aria-live="polite"></p>
+  <div id="loading" role="status">正在读取本地研究材料…</div>
+  <article id="results" hidden>
+    <div class="result-rail"><div><strong id="scope">研究预览</strong><span id="scope-date"></span></div><div class="rail-links"><button id="live" class="text-button" hidden>返回当前研究</button><a href="#matrix-panel">能力矩阵 ↓</a><button id="library-open" class="text-button">证据库</button></div></div>
+    <section id="report-panel" class="report-panel" hidden aria-label="已保存报告">
+      <div class="section-top"><div><p id="report-meta" class="kicker"></p><h2 id="report-title"></h2></div><a id="export" class="secondary">导出 Markdown</a></div>
+      <p id="report-question"></p><div class="markdown" id="report-body"></div>
+    </section>
+    <div class="analysis-grid">
+      <section class="findings" aria-labelledby="find-heading"><div class="section-top"><h2 id="find-heading">产品判断</h2><span id="finding-count" class="sub"></span></div><div id="findings"></div></section>
+      <aside class="coverage"><h2>证据概览</h2><div id="coverage-summary"></div><div id="source-bars"></div><button type="button" id="sources" class="text-button">查看来源与原文 →</button></aside>
+    </div>
+    <section class="panel" id="matrix-panel"><div class="section-top"><h2>能力对标矩阵</h2><span id="matrix-count" class="sub"></span></div><div id="matrix"></div></section>
+    <section class="panel" id="change-panel" hidden><div class="section-top"><h2>版本差异</h2></div><div id="changes"></div></section>
+    <details class="panel trace-panel" id="trace-panel"><summary><strong>研究执行记录</strong><span id="trace-count" class="sub"></span></summary><ol id="trace"></ol></details>
+  </article>
+</main>
+<dialog id="drawer" aria-labelledby="drawer-title"><div class="drawer-top"><div><p id="drawer-kicker" class="kicker"></p><h2 id="drawer-title"></h2></div><button id="close" class="secondary" autofocus>关闭</button></div><div id="drawer-body"></div></dialog>
+</body></html>

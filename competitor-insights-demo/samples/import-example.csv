@@ -1,0 +1,4 @@
+product,name,version,date,step,material,observation,handoff
+INK,墨汀 Studio,v2,2026-10-17,generate,INK-W2,输入同一任务描述生成首图,start
+INK,墨汀 Studio,v2,2026-10-17,iterate,INK-W2,当前图片可继续迭代,direct
+INK,墨汀 Studio,v2,2026-10-17,edit,INK-W2,点击局部编辑后自动带入上一轮结果，可直接选择墙面,direct

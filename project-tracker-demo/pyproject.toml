@@ -1,0 +1,9 @@
+[project]
+name = "project-tracker-demo"
+version = "1.0.0"
+description = "在本机跟踪项目进度和发布记录"
+requires-python = ">=3.11"
+dependencies = ["fastapi>=0.118,<1", "uvicorn>=0.34,<1", "httpx2>=2,<3", "python-dotenv>=1.0,<2"]
+
+[tool.uv]
+package = false

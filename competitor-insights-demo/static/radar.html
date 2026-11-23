@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#112e39">
+  <title>反馈雷达 · 竞品观察室</title>
+  <link rel="stylesheet" href="/static/research.css">
+  <link rel="stylesheet" href="/static/radar.css">
+  <script src="/static/radar.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#workspace">跳到反馈雷达</a>
+<header class="mast"><div class="wrap nav">
+  <a class="wordmark" href="/"><span class="mark" aria-hidden="true">◧</span>竞品观察室</a>
+  <nav aria-label="工作区"><a href="/">研究决策台</a><a href="/static/radar.html" aria-current="page">反馈雷达</a><a href="/static/walkthrough.html">原始走查</a></nav>
+</div></header>
+<main id="workspace" class="wrap">
+  <header class="intro">
+    <div><h1>反馈雷达</h1><p>对照相邻两个时间窗口，看哪些体验问题出现在更多独立来源中，再回到原文复核。</p></div>
+    <div class="radar-actions">
+      <button type="button" id="load-sample" class="primary">载入两周虚构反馈</button>
+      <button type="button" id="choose-file" class="secondary">导入材料 CSV</button>
+      <input hidden type="file" id="csv-file" accept=".csv,text/csv">
+    </div>
+  </header>
+  <form id="radar-controls" class="setup" aria-label="反馈范围">
+    <label class="field">研究对象<select id="left" required></select></label>
+    <label class="field">对标产品<select id="right" required></select></label>
+    <label class="field">每期时长<select id="window"><option value="7">7 天</option><option value="14">14 天</option><option value="30">30 天</option></select></label>
+    <label class="field">截止日 <span class="sub">留空取最近反馈</span><input type="date" id="as-of"></label>
+  </form>
+  <p id="notice" role="status" aria-live="polite"></p>
+  <article id="results" hidden>
+    <section class="radar-summary" aria-label="两期独立来源比较">
+      <div id="current-summary" class="period current"></div><div id="previous-summary" class="period"></div>
+    </section>
+    <section class="panel" aria-labelledby="alerts-title"><div class="section-top"><h2 id="alerts-title">需要复核的异动</h2><a href="#followups" class="text-button">查看跟进事项 ↓</a></div><div id="alerts"></div></section>
+    <section class="panel" aria-labelledby="topics-title"><div class="section-top"><h2 id="topics-title">反馈主题对照</h2><span id="topic-count" class="sub"></span></div>
+      <p class="hint">每行比较同一产品的一个主题。占比按该产品当期的独立反馈来源计算；同一来源的多段摘录合并计数。</p>
+      <div id="topics"></div>
+      <details class="method" id="channel-details"><summary>渠道样本构成</summary>
+        <p>比较两期采样是否集中于某一渠道。这里的数量只反映已收集的材料，不能用来估计市场占比。</p><div id="channels"></div>
+      </details>
+      <details class="method"><summary>查看归类方法与未归类摘录</summary><div id="method"></div></details>
+    </section>
+    <section class="panel" aria-labelledby="followups-title"><div class="section-top"><h2 id="followups-title">跟进事项</h2><span id="follow-count" class="sub"></span></div><div id="followups"></div></section>
+  </article>
+  <p class="file-help">准备自己的材料时，可先<a href="/api/research/materials/feedback-sample" download="feedback-observations.csv">下载两周反馈 CSV 样例</a>。同一条摘录使用稳定的证据编号，同一份访谈或工单共用来源编号。</p>
+</main>
+<dialog id="radar-dialog" aria-labelledby="dialog-title"><div class="drawer-top"><div><p id="dialog-sub" class="kicker"></p><h2 id="dialog-title"></h2></div><button id="close" class="secondary" autofocus>关闭</button></div><div id="dialog-body"></div></dialog>
+</body></html>

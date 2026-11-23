@@ -1,0 +1,3 @@
+id,product,version,date,capability,source_type,origin,source,position,excerpt
+SIG-EXPORT-01,RILL,v2,2026-10-09,export,release,RILL-EXPORT-REL,溪屿导出说明 · 虚构样例,support,交付选项中列有保留透明背景的 PNG 导出，可用于交接选区素材。
+SIG-EXPORT-02,RILL,v2,2026-10-10,export,feedback,INTERVIEW-EXPORT,素材交接访谈 · 虚构样例,friction,选了透明背景导出，交给同事后看到白色底图；尚未取得原文件复查。

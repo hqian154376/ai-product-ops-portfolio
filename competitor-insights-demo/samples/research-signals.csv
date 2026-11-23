@@ -1,0 +1,14 @@
+id,product,version,date,capability,source_type,origin,source,position,excerpt
+SIG-INK-01,INK,v1,2026-10-08,edit,release,INK-REL-1,墨汀 v1 功能说明,support,说明页将局部编辑描述为「从生成结果继续调整」；未注明进入新画布是否保留底图。
+SIG-INK-02,INK,v1,2026-10-09,edit,feedback,INT-A,使用者 A · 任务访谈,friction,调完色温切到局部编辑，画布让我再选一次刚才的图片。
+SIG-INK-03,INK,v1,2026-10-09,edit,feedback,INT-A,使用者 A · 同一访谈摘录,friction,第二次选图片时我不确定该选首图还是刚调过的版本。
+SIG-INK-04,INK,v1,2026-10-08,mask,release,INK-REL-1,墨汀 v1 功能说明,support,说明页展示了选中墙面后替换材质的操作。
+SIG-INK-05,INK,v1,2026-10-09,mask,feedback,INT-B,使用者 B · 任务访谈,friction,框选墙面后，贴近墙面的家具边缘也被重新生成。
+SIG-INK-06,INK,v1,2026-10-08,reference,release,INK-REL-1,墨汀 v1 功能说明,support,说明页写明可附一张材质参考图；样例未展示多轮后是否保留约束。
+SIG-RILL-01,RILL,v2,2026-10-07,history,release,RILL-REL-2,溪屿 v2 更新说明,support,画布保留此前的生成分支，可从历史版本重新编辑。
+SIG-RILL-02,RILL,v2,2026-10-08,reference,feedback,INT-C,使用者 C · 对照访谈,support,材质参考图在第二轮对话后仍显示在我的画布上。
+SIG-RILL-03,RILL,v2,2026-10-09,mask,feedback,INT-D,使用者 D · 对照访谈,support,换墙面时我还能看出邻近家具原来的纹理，边界看起来留住了。
+SIG-INK-07,INK,v2,2026-10-16,edit,release,INK-REL-2,墨汀 v2 更新说明,support,新版局部编辑入口可以沿用上一轮生成的画布。
+SIG-INK-08,INK,v2,2026-10-16,mask,release,INK-REL-2,墨汀 v2 更新说明,support,更新说明写明已改善细小选区边缘保留。
+SIG-INK-09,INK,v2,2026-10-17,mask,feedback,INT-E,使用者 E · 新版回访,friction,细椅腿靠着墙面时，修改墙面仍会带动一小段椅腿。
+SIG-INK-10,INK,v2,2026-10-17,history,feedback,INT-E,使用者 E · 新版回访,friction,局部编辑后，我没在当前画布找到上一个版本的恢复入口。

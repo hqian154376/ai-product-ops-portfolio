@@ -1,0 +1,7 @@
+product,name,version,date,step,material,observation,handoff
+INK,墨汀 Studio,v1,2026-10-10,generate,INK-W1,输入任务描述后生成室内首图,start
+INK,墨汀 Studio,v1,2026-10-10,iterate,INK-W1,在对话框沿用首图调整整体色温,direct
+INK,墨汀 Studio,v1,2026-10-10,edit,INK-W1,进入编辑页后画布为空，需重新上传上一轮图片,upload
+RILL,溪屿 Canvas,v2,2026-10-10,generate,RILL-W1,从画布输入任务描述并生成首图,start
+RILL,溪屿 Canvas,v2,2026-10-10,iterate,RILL-W1,选中首图继续调整色温,direct
+RILL,溪屿 Canvas,v2,2026-10-10,edit,RILL-W1,点击局部编辑直接带入当前画布，选区替换墙面材质,direct

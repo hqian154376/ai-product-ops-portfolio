@@ -1,0 +1,2 @@
+product,name,version,date,step,material,observation,handoff
+RILL,溪屿 Canvas,v2,2026-10-10,export,RILL-PNG-01,用透明背景画布导出 PNG，检查导出文件的 alpha 通道，所有像素均为不透明；本次文件未保留透明背景，其他格式及规格未测试。,fail

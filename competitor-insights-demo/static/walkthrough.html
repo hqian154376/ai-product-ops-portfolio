@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>竞品观察室 · 设计任务走查</title><link rel="stylesheet" href="/static/styles.css"><script defer src="/static/app.js"></script></head>
+<body><header><strong>竞品观察室</strong><a href="/" style="color:inherit;margin-left:auto">研究决策台</a><a href="/static/radar.html" style="color:inherit">反馈雷达</a></header><main>
+<h1>从首图到局部编辑</h1><p class="intro">用同一个室内设计任务走查两款工具。比较生成、迭代和局部编辑时，上一步的图片能否继续使用。</p>
+<section><div class="bar"><h2>任务走查</h2><div><a href="/sample.csv" download>下载新版走查 CSV</a> <label class="upload">导入 CSV<input id="file" type="file" accept=".csv"></label></div></div>
+<div class="selectors"><label>工具 A<select id="left"></select></label><label>工具 B<select id="right"></select></label></div>
+<div id="matrix" class="grid"></div></section>
+<section><div class="bar"><h2>分析报告</h2><span id="mode" class="tag"></span></div>
+<label for="question">研究问题</label><textarea id="question" rows="2">两款工具的局部编辑能否沿用上一轮图片？哪一处入口值得优先优化？</textarea>
+<button id="generate">生成报告</button><p id="notice" role="status"></p>
+<article id="report" hidden><h3 id="title"></h3><p id="counts"></p><div id="body"></div><details><summary>本次读取清单</summary><ul id="reads"></ul></details><details id="proof"><summary>引用证据</summary><div id="evidence"></div></details><a id="export">导出 Markdown</a></article></section>
+<section><h2>报告记录</h2><div id="history"></div></section></main></body></html>

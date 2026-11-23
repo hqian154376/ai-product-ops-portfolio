@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>真实模型回放 · 竞品观察室</title>
+  <link rel="stylesheet" href="research.css">
+  <style>
+    .replay {max-width:990px;padding-bottom:48px}
+    .replay .intro {display:block}
+    .replay .intro p {max-width:60ch}
+    .replay h1 {margin-bottom:10px}
+    .replay section {scroll-margin-top:1rem}
+    .replay .report-panel p {max-width:70ch}
+    .replay .trace-panel code {color:var(--muted);overflow-wrap:anywhere}
+    .replay .markdown h3 {margin-top:20px}
+    .replay .markdown li {margin:6px 0}
+    .replay .evidence-row {scroll-margin-top:1rem}
+    .replay .evidence-row:target {background:#edf6ef;outline:2px solid #35705a;outline-offset:3px}
+    .replay .ref {text-decoration:none;display:inline-block}
+    .replay .ref:hover,.replay .ref:focus-visible {text-decoration:underline}
+    .replay .contents {display:flex;flex-wrap:wrap;gap:6px 20px;font-size:14px;margin:12px 0}
+    .replay .sub {margin:4px 0 10px}
+  </style>
+</head>
+<body>
+<a class="skip" href="#case">跳到回放</a>
+<header class="mast"><div class="wrap nav">
+  <a class="wordmark" href="index.html"><span class="mark" aria-hidden="true">◧</span>竞品观察室</a>
+  <nav aria-label="工作区"><a href="index.html">研究决策台</a><a href="model-replay.html" aria-current="page">真实模型回放</a></nav>
+</div></header>
+<main id="case" class="wrap replay">
+  <header class="intro"><h1>墨汀的选区边界值得优先复测吗？</h1>
+    <p>这是 deepseek-flash 在 2026 年 11 月 24 日使用虚构产品材料生成的历史报告。回放使用随包保存的结果，打开和核对引用均可离线完成。</p>
+  </header>
+  <section class="report-panel" aria-labelledby="question"><h2 id="question">当时怎么问</h2>
+    <p>请调用反馈趋势工具比较墨汀与溪屿最近七天和前七天，给出选区外细节保留的独立来源分母与渠道构成。再查看版本变化，核对两款产品的走查或原文，各引用证据编号。给出一个待验证的产品机会、一个已可转为回归的断点、一个具体实验口径。请控制在500字以内。</p>
+    <p class="sub">研究资料截至 2026-10-17。模型打开了 11 份独立材料中的 12 条原文，正文引用了其中 9 条。</p>
+    <nav class="contents" aria-label="回放内容"><a href="#trace">工具调用</a><a href="#accounting">程序核算</a><a href="#interpretation">模型解读</a><a href="#sources">当时的原文</a></nav>
+  </section>
+  <section class="panel trace-panel" id="trace"><h2>模型实际调用了哪些工具</h2>
+    <p class="sub">程序先按产品与截止日期筛出 41 条证据，并计算能力矩阵和版本差异。模型随后发出以下 5 次只读调用，涉及 4 种工具。</p>
+    <ol>
+<li data-tool="read_feedback_trends"><strong>读取反馈趋势</strong> <code>read_feedback_trends</code><p>读取 7 天双窗口，返回 4 个主题的分子与分母。</p></li>
+<li data-tool="read_feedback_trends"><strong>读取反馈趋势</strong> <code>read_feedback_trends</code><p>读取 7 天双窗口，返回 4 个主题的分子与分母。</p></li>
+<li data-tool="list_changes"><strong>核对版本变化</strong> <code>list_changes</code><p>检查 3 条可复核的版本变化。</p></li>
+<li data-tool="compare_capabilities"><strong>对齐能力状态</strong> <code>compare_capabilities</code><p>比较 1 项能力的两侧状态。</p></li>
+<li data-tool="open_evidence"><strong>打开原文</strong> <code>open_evidence</code><p>读取 12 条带日期与出处的原文。　<a href="#sources">查看打开的原文</a></p></li>
+    </ol>
+  </section>
+  <section class="panel" id="accounting"><h2>程序核算</h2>
+    <div class="markdown">
+<p>本期 2026-10-11 至 2026-10-17，上期 2026-10-04 至 2026-10-10。</p>
+<p>分母为本产品在对应窗口收录的全部独立反馈来源，每个主题内按来源去重。</p>
+<h3>墨汀 Studio · 选区外细节保留</h3>
+<ul>
+<li>本期：提及 5/6，其中登记负向的来源为 4/6。</li>
+<li>上期：提及 1/5，其中登记负向的来源为 1/5。</li>
+</ul>
+<p>主题渠道（本期/上期独立来源数）：访谈 2/0、社群反馈 1/0、支持工单 1/0、渠道未登记 1/1。不同渠道不可直接相加。</p>
+<ul>
+<li>登记负向原文（2026-10-17）：<a class="ref" href="#source-SIG-INK-09">SIG-INK-09</a></li>
+<li>登记正向原文（2026-10-16）：<a class="ref" href="#source-SIG-RADAR-17">SIG-RADAR-17</a></li>
+</ul>
+<p>核算结果：升温，达到复验提醒门槛。</p>
+<h3>溪屿 Canvas · 选区外细节保留</h3>
+<ul>
+<li>本期：提及 无样本，其中登记负向的来源为 无样本。</li>
+<li>上期：提及 1/7，其中登记负向的来源为 0/7。</li>
+</ul>
+<p>主题渠道（本期/上期独立来源数）：渠道未登记 0/1。不同渠道不可直接相加。</p>
+<ul>
+<li>登记正向原文（2026-10-09）：<a class="ref" href="#source-SIG-RILL-03">SIG-RILL-03</a></li>
+</ul>
+<p>核算结果：本期无反馈。</p>
+    </div>
+  </section>
+  <section class="report-panel" id="interpretation"><h2>模型解读</h2>
+    <p class="sub">点击正文里的证据编号，核对当时提供给模型的原文。</p>
+    <div class="markdown">
+<p><strong>核心判断</strong>：墨汀 v2 的“选区外细节保留”问题正在增多。走查没有覆盖这个能力，目前只有反馈材料；溪屿最近七天反馈断档，无法做同期对比。</p>
+<p><strong>反馈趋势（双窗口，程序核算）</strong></p>
+<ul>
+<li>墨汀：本期 6 个独立来源中有 5 个提到该问题，负向来源达到复验门槛，标签为“升温”；上期为 1/5。</li>
+<li>溪屿：本期 0 个来源，上期 7 个来源中有 1 个提到该问题，标签为“本期无反馈”。因此这只能算材料缺失，不能视为没有该问题。</li>
+<li>渠道构成见工具结果，此处不重复；需注意墨汀本期有 1 份来源渠道未登记。</li>
+</ul>
+<p><strong>原文核对</strong></p>
+<ul>
+<li>负向：同一份新版回访中，细椅腿被带动 <a class="ref" href="#source-SIG-INK-09">SIG-INK-09</a>；工单里同一张原图重试后椅腿仍缺半截 <a class="ref" href="#source-SIG-RADAR-16">SIG-RADAR-16</a>；访谈中窗框边缘被涂掉，换图复现 <a class="ref" href="#source-SIG-RADAR-13">SIG-RADAR-13</a>。</li>
+<li>正向：同行札记里窄选区保住了家具边界 <a class="ref" href="#source-SIG-RADAR-17">SIG-RADAR-17</a>；溪屿访谈称“看不出邻近家具纹理被改” <a class="ref" href="#source-SIG-RILL-03">SIG-RILL-03</a>。这些都是单条主观描述，不能证明产品整体优劣。</li>
+<li>版本说明自述“改善细小选区边缘保留” <a class="ref" href="#source-SIG-INK-08">SIG-INK-08</a>，这与反馈方向相反，属于公告口径，不是实测。</li>
+</ul>
+<p><strong>走查变化</strong>：版本变化只涉及编辑入口，已从空画布改为自动带入上一轮结果 <a class="ref" href="#source-INK@2026-10-10/edit">INK@2026-10-10/edit</a> 到 <a class="ref" href="#source-INK@2026-10-17/edit">INK@2026-10-17/edit</a>；该能力已标为 resolved，可直接作为回归用例。</p>
+<p><strong>机会（待验证）</strong>：为选区边界增加“保护区/笔刷微调”，让用户手动锁定邻近物体，减少重新生成侵蚀。依据是负向反馈集中在边界，而笔刷操控获得正向评价 <a class="ref" href="#source-SIG-RADAR-18">SIG-RADAR-18</a>。但笔刷正向反馈不能代表保护功能有效，边界问题的贡献程度仍缺量化证据。</p>
+<p><strong>实验口径</strong></p>
+<ul>
+<li>对象：墨汀 v2 同期对照，溪屿仅做参照。</li>
+<li>任务：墙面粉刷、椅腿贴墙、窗框贴墙三类固定原图，各重复 3 次。</li>
+<li>指标：选区外像素改动率（主）、需重试次数、用户主观边界保留评分。</li>
+<li>判定：预设改动率下降阈值与样本量；双人独立标注，分歧由第三人裁定。</li>
+</ul>
+<p><strong>证据缺口</strong>：溪屿最近七天没有记录，墨汀没有该能力的任务走查，所以目前无法排除版本说明所称改善与反馈冲突的其他解释。</p>
+    </div>
+  </section>
+  <section class="panel" id="sources"><h2>模型打开的 12 条原文</h2>
+    <p class="sub">引文按打开顺序排列。两条来自同一次回访，按来源编号合计 11 份独立材料。</p>
+<article class="evidence-row" id="source-SIG-INK-09" tabindex="-1">
+  <h3>使用者 E · 新版回访</h3>
+  <small>墨汀 Studio · v2 · 2026-10-17 · 用户反馈</small>
+  <blockquote>细椅腿靠着墙面时，修改墙面仍会带动一小段椅腿。</blockquote>
+  <small>SIG-INK-09　·　来源编号 INT-E　·　模型正文引用、程序核算引用</small>
+</article>
+<article class="evidence-row" id="source-SIG-RADAR-16" tabindex="-1">
+  <h3>同次工单补充 06</h3>
+  <small>墨汀 Studio · v2 · 2026-10-16 · 用户反馈</small>
+  <blockquote>回到那张原图重试，同一条椅腿仍缺了半截。</blockquote>
+  <small>SIG-RADAR-16　·　来源编号 STUDY-I06　·　模型正文引用</small>
+</article>
+<article class="evidence-row" id="source-SIG-RADAR-17" tabindex="-1">
+  <h3>同行测试札记 07</h3>
+  <small>墨汀 Studio · v2 · 2026-10-16 · 用户反馈</small>
+  <blockquote>这个样例的家具边界保住了，用的选区比上次更窄。</blockquote>
+  <small>SIG-RADAR-17　·　来源编号 STUDY-I07　·　模型正文引用、程序核算引用</small>
+</article>
+<article class="evidence-row" id="source-SIG-INK-05" tabindex="-1">
+  <h3>使用者 B · 任务访谈</h3>
+  <small>墨汀 Studio · v1 · 2026-10-09 · 用户反馈</small>
+  <blockquote>框选墙面后，贴近墙面的家具边缘也被重新生成。</blockquote>
+  <small>SIG-INK-05　·　来源编号 INT-B　·　模型已读</small>
+</article>
+<article class="evidence-row" id="source-SIG-RILL-03" tabindex="-1">
+  <h3>使用者 D · 对照访谈</h3>
+  <small>溪屿 Canvas · v2 · 2026-10-09 · 用户反馈</small>
+  <blockquote>换墙面时我还能看出邻近家具原来的纹理，边界看起来留住了。</blockquote>
+  <small>SIG-RILL-03　·　来源编号 INT-D　·　模型正文引用、程序核算引用</small>
+</article>
+<article class="evidence-row" id="source-SIG-RADAR-13" tabindex="-1">
+  <h3>设计回访 04</h3>
+  <small>墨汀 Studio · v2 · 2026-10-12 · 用户反馈</small>
+  <blockquote>只选墙面时窗框边缘也被涂掉一小截，换了两张图仍见到类似情况。</blockquote>
+  <small>SIG-RADAR-13　·　来源编号 STUDY-I04　·　模型正文引用</small>
+</article>
+<article class="evidence-row" id="source-SIG-RADAR-18" tabindex="-1">
+  <h3>画笔交互回访 08</h3>
+  <small>墨汀 Studio · v2 · 2026-10-17 · 用户反馈</small>
+  <blockquote>笔刷大小可以边看边改，勾轮廓时比此前顺手。</blockquote>
+  <small>SIG-RADAR-18　·　来源编号 STUDY-I08　·　模型正文引用</small>
+</article>
+<article class="evidence-row" id="source-SIG-INK-08" tabindex="-1">
+  <h3>墨汀 v2 更新说明</h3>
+  <small>墨汀 Studio · v2 · 2026-10-16 · 版本说明</small>
+  <blockquote>更新说明写明已改善细小选区边缘保留。</blockquote>
+  <small>SIG-INK-08　·　来源编号 INK-REL-2　·　模型正文引用</small>
+</article>
+<article class="evidence-row" id="source-INK@2026-10-17/edit" tabindex="-1">
+  <h3>INK-W2</h3>
+  <small>墨汀 Studio · v2 · 2026-10-17 · 任务走查</small>
+  <blockquote>点击局部编辑后自动带入上一轮结果，可直接选择墙面</blockquote>
+  <small>INK@2026-10-17/edit　·　来源编号 INK-W2　·　模型正文引用</small>
+</article>
+<article class="evidence-row" id="source-INK@2026-10-10/edit" tabindex="-1">
+  <h3>INK-W1</h3>
+  <small>墨汀 Studio · v1 · 2026-10-10 · 任务走查</small>
+  <blockquote>进入编辑页后画布为空，需重新上传上一轮图片</blockquote>
+  <small>INK@2026-10-10/edit　·　来源编号 INK-W1　·　模型正文引用</small>
+</article>
+<article class="evidence-row" id="source-SIG-RADAR-10" tabindex="-1">
+  <h3>版本操作访谈 01</h3>
+  <small>墨汀 Studio · v1 · 2026-10-04 · 用户反馈</small>
+  <blockquote>恢复此前版本后，可以沿用当时的画面继续修改。</blockquote>
+  <small>SIG-RADAR-10　·　来源编号 STUDY-I01　·　模型已读</small>
+</article>
+<article class="evidence-row" id="source-SIG-INK-10" tabindex="-1">
+  <h3>使用者 E · 新版回访</h3>
+  <small>墨汀 Studio · v2 · 2026-10-17 · 用户反馈</small>
+  <blockquote>局部编辑后，我没在当前画布找到上一个版本的恢复入口。</blockquote>
+  <small>SIG-INK-10　·　来源编号 INT-E　·　模型已读</small>
+</article>
+    <nav class="contents" aria-label="返回"><a href="#interpretation">返回模型解读</a><a href="#case">回到研究问题</a></nav>
+  </section>
+</main>
+</body></html>

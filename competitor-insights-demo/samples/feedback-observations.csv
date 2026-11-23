@@ -1,0 +1,19 @@
+id,product,version,date,capability,source_type,origin,source,position,excerpt,channel
+SIG-RADAR-01,RILL,v2,2026-09-28,export,feedback,STUDY-R01,桌面素材访谈 01,support,那周导出的透明底图能直接放在深色背景上。,interview
+SIG-RADAR-02,RILL,v2,2026-09-30,export,feedback,STUDY-R02,画册校对访谈 02,support,交付的长边像素与预设一致，打印样张的细节足够。,interview
+SIG-RADAR-03,RILL,v2,2026-10-02,history,feedback,STUDY-R03,设计回访 03,support,我成功恢复了前一版画布，找回最早的方案。,interview
+SIG-RADAR-04,RILL,v2,2026-10-05,export,feedback,STUDY-R04,素材交付工单 04,friction,勾选透明背景以后把导出的标识贴到海报上，周围还是白底。,support
+SIG-RADAR-05,RILL,v2,2026-10-05,export,feedback,STUDY-R04,同次交付工单补充 04,friction,同一份标识又试了一次，背景仍然变成白色底图。,support
+SIG-RADAR-06,RILL,v2,2026-10-07,export,feedback,STUDY-R05,社群体验摘录 05,friction,在深色页放入刚存的透明底图，白色方块挡住了正文。,community
+SIG-RADAR-07,RILL,v2,2026-10-09,export,feedback,STUDY-R06,创作者求助工单 06,friction,同事说 alpha 看起来是全满，我们还没拿到他检查的原文件。,support
+SIG-RADAR-08,RILL,v2,2026-10-10,export,feedback,STUDY-R07,另一位创作者复述 07,support,我的图标导出后保留了透明背景，和页面叠放没看到白边。,interview
+SIG-RADAR-09,RILL,v2,2026-10-10,export,feedback,STUDY-R08,印刷交付访谈 08,friction,海报输出尺寸比设置值小，交付前还需要核对像素尺寸。,interview
+SIG-RADAR-10,INK,v1,2026-10-04,history,feedback,STUDY-I01,版本操作访谈 01,support,恢复此前版本后，可以沿用当时的画面继续修改。,interview
+SIG-RADAR-11,INK,v1,2026-10-08,mask,feedback,STUDY-I02,交互回访 02,support,改用较小的画笔以后，我能单独框出靠墙的书桌。,interview
+SIG-RADAR-12,INK,v1,2026-10-09,mask,feedback,STUDY-I03,小组讨论摘录 03,unknown,这次操作感受和上次不同，需要重新问清具体在哪里。,community
+SIG-RADAR-13,INK,v2,2026-10-12,mask,feedback,STUDY-I04,设计回访 04,friction,只选墙面时窗框边缘也被涂掉一小截，换了两张图仍见到类似情况。,interview
+SIG-RADAR-14,INK,v2,2026-10-13,mask,feedback,STUDY-I05,社群设计讨论 05,friction,换墙漆后选区外的挂画颜色也变动了，还没确定是不是我的选法。,community
+SIG-RADAR-15,INK,v2,2026-10-15,mask,feedback,STUDY-I06,编辑求助工单 06,friction,重新生成时椅腿跟背景粘在一起，没保住原来的轮廓。,support
+SIG-RADAR-16,INK,v2,2026-10-16,mask,feedback,STUDY-I06,同次工单补充 06,friction,回到那张原图重试，同一条椅腿仍缺了半截。,support
+SIG-RADAR-17,INK,v2,2026-10-16,mask,feedback,STUDY-I07,同行测试札记 07,support,这个样例的家具边界保住了，用的选区比上次更窄。,interview
+SIG-RADAR-18,INK,v2,2026-10-17,mask,feedback,STUDY-I08,画笔交互回访 08,support,笔刷大小可以边看边改，勾轮廓时比此前顺手。,interview

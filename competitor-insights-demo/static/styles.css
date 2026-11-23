@@ -1,0 +1,185 @@
+* {
+  box-sizing:border-box;
+}
+
+body {
+  margin:0;
+  background:#f1f3ef;
+  color:#1f322d;
+  font:16px/1.65 "Segoe UI","Microsoft YaHei",sans-serif;
+}
+
+header {
+  background:#1d3934;
+  color:white;
+  padding:14px max(5vw,calc((100vw - 1040px)/2));
+  display:flex;
+  align-items:center;
+  gap:1.5rem;
+}
+
+header span {
+  color:#c2d9c9;
+}
+
+main {
+  max-width:1080px;
+  margin:auto;
+  padding:34px 20px 80px;
+}
+
+h1 {
+  font-size:clamp(30px,4vw,48px);
+  line-height:1.18;
+  letter-spacing:-.055em;
+  margin:12px 0;
+}
+
+.intro {
+  color:#52635d;
+  max-width:720px;
+}
+
+section {
+  margin-top:22px;
+  padding:24px;
+  background:#fff;
+  border:1px solid #d3ddd5;
+  border-radius:12px;
+}
+
+h2,h3,h4 {
+  margin:.25em 0 .6em;
+}
+
+h2 {
+  font-size:21px;
+}
+
+.bar,.selectors {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.selectors {
+  justify-content:start;
+  margin:12px 0;
+}
+
+select,textarea,button,.upload {
+  font:inherit;
+  border:1px solid #a7b8ae;
+  border-radius:6px;
+  padding:5px 10px;
+}
+
+select {
+  display:block;
+  background:white;
+}
+
+textarea {
+  display:block;
+  width:100%;
+  margin:6px 0 14px;
+  padding:10px;
+}
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,275px),1fr));
+  gap:16px;
+}
+
+.card {
+  padding:16px;
+  background:#f3f6f1;
+  border-radius:8px;
+}
+
+.card p {
+  margin:8px 0;
+}
+
+.tag,#counts {
+  color:#205b49;
+  font-weight:600;
+}
+
+a,summary {
+  color:#22614f;
+  cursor:pointer;
+}
+
+button,.upload {
+  cursor:pointer;
+  background:#245846;
+  color:white;
+}
+
+.upload {
+  display:inline-block;
+  margin-left:8px;
+}
+
+.upload:focus-within {
+  outline:2px solid orange;
+}
+
+.upload input {
+  position:absolute;
+  width:1px;
+  height:1px;
+  opacity:0;
+}
+
+button:disabled {
+  opacity:.55;
+}
+
+#notice {
+  color:#784017;
+}
+
+article {
+  border-top:1px solid #d3ddd5;
+  padding-top:18px;
+}
+
+#body p {
+  margin:5px 0;
+}
+
+details {
+  margin:18px 0;
+}
+
+.proof {
+  padding:8px;
+  border-left:3px solid #b8c8be;
+  margin:8px 0;
+  scroll-margin:25px;
+}
+
+.proof:focus {
+  background:#fff3d2;
+}
+
+#history button {
+  display:block;
+  margin:6px 0;
+  background:#f3f6f1;
+  color:#205b49;
+  text-align:left;
+}
+
+.ref {
+  padding:0 3px;
+  border:0;
+  background:transparent;
+  color:#20694e;
+  text-decoration:underline;
+}
