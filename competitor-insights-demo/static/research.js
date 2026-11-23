@@ -53,7 +53,7 @@ function configureActions() {
   el("generate").disabled = locked || !state.ready || state.mode === "incomplete";
   el("generate").textContent = locked ? "正在生成报告…" : "生成研究报告 →";
   for (const control of el("setup").querySelectorAll("input,select,textarea")) control.disabled = locked;
-  for (const id of ["import-open", "history-open", "live"]) el(id).disabled = locked;
+  for (const id of ["import-open", "live"]) el(id).disabled = locked;
 }
 async function products() {
   const {products} = await api("/api/products");
@@ -62,6 +62,7 @@ async function products() {
     const before = select.value;
     select.replaceChildren(...products.map((p) => new Option(p.name, p.product)));
     if (products.some((p) => p.product === before)) select.value = before;
+    else if (products.some(p => p.product === (id === "left" ? "INK" : "RILL"))) select.value = id === "left" ? "INK" : "RILL";
     else if (id === "right" && products.length > 1) select.selectedIndex = 1;
   }
 }
@@ -303,6 +304,12 @@ function display(data) {
   el("live").hidden = !saved;
   el("report-panel").hidden = !saved;
   if (saved) {
+    for (const [id, product] of [["left", data.products[0]], ["right", data.products[1]]]) {
+      el(id).value = product.sku;
+    }
+    el("as-of").value = data.as_of;
+    el("question").value = data.question;
+    document.querySelector('[name=intent][value="' + data.intent + '"]').checked = true;
     el("report-title").textContent = data.title;
     const mode = data.mode === "model" ? "模型工具调用" + (data.model ? " · " + data.model : "") : "本地规则分析";
     const c = data.counts;
@@ -337,55 +344,6 @@ async function submit(event) {
     state.busy = false;
     configureActions();
   }
-}
-async function openHistory() {
-  const area = openDialog("报告库", "保留生成时的材料和结论");
-  const request = state.dialogRequest;
-  const list = node("div");
-  const error = node("p", "");
-  error.setAttribute("role", "status");
-  const more = button("加载更早的报告", () => load());
-  const old = node("a", "查看原始走查报告 →");
-  old.href = "/static/walkthrough.html#history";
-  area.replaceChildren(list, more, error, old);
-  let before = null;
-  function reportButton(r) {
-    const entry = button("#" + r.id + "　" + r.title, async () => {
-      try {
-        const report = await api("/api/research/reports/" + encodeURIComponent(r.id));
-        if (request !== state.dialogRequest) return;
-        ++state.revision;
-        state.ready = false;
-        configureActions();
-        display(report);
-        el("drawer").close();
-        inform("已打开历史快照。点击“返回当前研究”可继续分析。");
-        el("report-panel").scrollIntoView({block:"start"});
-      } catch (e) { error.textContent = e.message; }
-    }, "past");
-    if (r.created_at) entry.append(node("small", new Date(r.created_at).toLocaleString("zh-CN")));
-    return entry;
-  }
-  async function load() {
-    more.disabled = true;
-    error.textContent = "正在读取报告…";
-    try {
-      const query = before === null ? "" : "?before=" + encodeURIComponent(before);
-      const page = await api("/api/research/reports" + query);
-      if (request !== state.dialogRequest) return;
-      list.append(...page.reports.map(reportButton));
-      if (!list.hasChildNodes()) list.append(node("p", "还没有研究报告。选择一个研究方向，生成第一份报告。"));
-      before = page.next_before;
-      more.hidden = before === null;
-      error.textContent = "";
-    } catch (e) {
-      error.textContent = e.message;
-      more.textContent = "重试读取报告";
-    } finally {
-      more.disabled = false;
-    }
-  }
-  await load();
 }
 function openImport() {
   const area = openDialog("导入研究材料", "UTF-8 CSV");
@@ -432,7 +390,6 @@ async function upload(event, source) {
 }
 el("drawer").addEventListener("close", () => { state.dialogRequest++; });
 el("close").addEventListener("click", () => el("drawer").close());
-el("history-open").addEventListener("click", openHistory);
 el("import-open").addEventListener("click", openImport);
 el("csv-file").addEventListener("change", handle((e) => upload(e, false)));
 el("source-file").addEventListener("change", handle((e) => upload(e, true)));
@@ -471,4 +428,11 @@ handle(async () => {
   el("mode").textContent = {model:"模型工具调用",local:"本地规则分析",incomplete:"模型配置待补全"}[state.mode];
   el("question-hint").textContent = state.mode === "local" ? "本地模式可按能力追问，如“选区精度还缺什么证据？”" : state.mode === "model" ? "模型将按问题检索并核对原文。" : "在 .env 填全模型配置并重启后即可生成报告。";
   await preview();
+  const reportId = params.get("report");
+  if (reportId && /^\d+$/.test(reportId)) {
+    const report = await api("/api/research/reports/" + reportId);
+    display(report);
+    inform("已打开历史报告，可核对引用或导出。返回报告库可继续选择其他报告。");
+    el("report-panel").scrollIntoView({block:"start"});
+  }
 })();

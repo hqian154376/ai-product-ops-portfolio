@@ -1,0 +1,23 @@
+/* One shared header across every workspace, including the standalone replay. */
+.workspace-header {display:block;margin:0;padding:0;background:#102e39;color:#fff;border-bottom:3px solid #789c90;font:14px/1.5 "Microsoft YaHei","Segoe UI",sans-serif}
+.workspace-header-inner {max-width:1240px;margin:auto;padding:0 clamp(16px,4vw,58px);display:flex;gap:24px;align-items:center}
+.workspace-header .workspace-brand {flex-shrink:0;color:#fff;font-size:18px;font-weight:750;text-decoration:none;white-space:nowrap}
+.workspace-header nav {display:flex;flex:1;justify-content:flex-end;align-items:stretch;min-width:0;gap:0}
+.workspace-header nav a {display:flex;flex-direction:column;justify-content:center;gap:3px;min-height:78px;padding:12px 12px;margin-bottom:-3px;border-bottom:3px solid transparent;color:#e0e9eb;text-decoration:none;white-space:nowrap;background:none}
+.workspace-header nav span {font-size:14px;font-weight:650;color:inherit}
+.workspace-header nav small {font-size:11px;color:#a9bdc3;font-weight:400}
+.workspace-header nav a:hover {background:#20404b}
+.workspace-header nav a[aria-current=page] {background:#1b4145;border-bottom-color:#bce8c4;color:#d2f7da}
+.workspace-header nav a[aria-current=page] small {color:#c4dfd1}
+.workspace-header a:focus-visible {outline:3px solid #9dccff;outline-offset:-4px}
+@media(max-width:1080px) {
+ .workspace-header-inner {display:block;padding-top:12px}
+ .workspace-header .workspace-brand {display:inline-block;margin-bottom:6px}
+ .workspace-header nav {justify-content:flex-start}
+ .workspace-header nav a {flex:1;padding:10px 9px;min-height:66px}
+}
+@media(max-width:600px) {
+ .workspace-header nav {display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+ .workspace-header nav a {min-height:58px;padding:7px 5px;margin-bottom:0}
+ .workspace-header nav small {font-size:10px;white-space:normal}
+}

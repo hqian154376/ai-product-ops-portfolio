@@ -24,6 +24,7 @@ async function loadProducts() {
     const previous = el(id).value;
     el(id).replaceChildren(...data.products.map(p => new Option(p.name,p.product)));
     if (previous) el(id).value = previous;
+    else if (data.products.some(p => p.product === (id === "left" ? "INK" : "RILL"))) el(id).value = id === "left" ? "INK" : "RILL";
     else if (id === "right") el(id).selectedIndex = 1;
   }
 }
@@ -34,6 +35,11 @@ async function compare() {
   for (const tool of pair.products) {
     const rows = pair.observations.filter(r => r.product === tool.sku);
     const last = rows.at(-1);
+    if (!last) {
+      const card = node("div", "", "card");
+      card.append(node("h3",tool.name), node("p","尚无实际任务走查，请先导入走查记录。官方文档可在研究决策台查看。"));
+      el("matrix").append(card); continue;
+    }
     const card = node("div","","card");
     card.append(node("h3",tool.name), node("small",last.version+" · "+last.date));
     for (const [key,label] of Object.entries(steps)) {
@@ -107,3 +113,5 @@ handle(async () => {
   el("question").readOnly = status.mode === "local";
   await loadProducts(); await compare(); await history();
 })();
+
+handle(async () => { const id = new URLSearchParams(location.search).get("report"); if (id && /^\d+$/.test(id)) { showReport(await api("/api/reports/"+id)); el("report").scrollIntoView({block:"start"}); } })();

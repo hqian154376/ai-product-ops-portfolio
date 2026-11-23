@@ -1,6 +1,8 @@
-<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>来源采集 · 竞品观察室</title><link rel="stylesheet" href="/static/research.css"><script src="/static/collection.js" defer></script>
-<header class="mast"><div class="wrap nav"><a class="wordmark" href="/">◧ 竞品观察室</a><nav><a href="/">研究决策台</a><a href="/static/collection.html" aria-current="page">来源采集</a><a href="/static/radar.html">反馈雷达</a></nav></div></header>
+<link rel="stylesheet" href="/static/navigation.css"><script src="/static/navigation.js" defer></script></head>
+<body data-workspace-page="collection">
+<header id="workspace-header"></header>
 <main class="wrap"><div class="intro"><div><h1>从公开网页到研究证据</h1><p>少量人工选来源 → 程序采集正文 → 确认摘录 → Agent 查证分析。</p></div></div>
 <section class="panel"><h2>1. 采集公开来源</h2><p>这里使用真实 Krita、GIMP 官方 PNG 文档演示采集，与墨汀、溪屿虚构案例分别研究。公开文档说明厂商支持什么，操作体验仍需走查。</p><button id="agent-collect" class="primary">让采集 Agent 处理来源</button><pre id="agent-trace" style="white-space:pre-wrap"></pre><div id="sources" class="controls"></div><p id="notice" role="status"></p></section>
 <section class="panel"><h2>2. 核对原文并入库</h2><p>自动提取正文并按内容去重；重复采集不增加快照。正文变化时保留新旧快照。下方预填前 800 字，可换成正文中另一段连续原文。</p><div id="snapshots"></div></section>
